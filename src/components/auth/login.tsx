@@ -1,0 +1,98 @@
+import { useForm } from 'react-hook-form'
+import FormField from '../common/form-field'
+import ButtonComponent from '../common/button'
+import SwitchComponent from '../common/checkbox'
+import DividerComponent from '../common/divider'
+import { Link } from 'react-router-dom'
+
+interface ILogin {
+  email: string
+  password: string
+}
+
+// Google Icon component
+const GoogleIcon = () => (
+  <img
+    src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg"
+    alt="Google"
+    className="w-5 h-5"
+  />
+)
+
+const Login = () => {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<ILogin>()
+
+  const onSubmit = (data: ILogin) => {
+    console.log(data)
+  }
+
+  return (
+    <div className="w-full h-full flex flex-col">
+      {/* Form centered vertically */}
+      <div className="flex-1 flex items-center">
+        <form onSubmit={handleSubmit(onSubmit)} className="w-full space-y-6">
+          <h1 className="text-[40px] text-[#1EC5E0] font-black">
+            WELCOME TO LIGHTNX
+          </h1>
+
+          <FormField
+            type="email"
+            name="email"
+            label="Email Address"
+            placeholder="Email or phone number"
+            register={register}
+            error={errors.email}
+          />
+
+          <FormField
+            type="password"
+            name="password"
+            label="Password"
+            placeholder="Enter password"
+            register={register}
+            error={errors.password}
+          />
+
+          <div className="flex items-center justify-between">
+            <SwitchComponent label="Remember me" />
+            <Link to="/forgot-password" className="hover:underline">
+              Forgot password?
+            </Link>
+          </div>
+
+          <ButtonComponent size="large" color="#007AFF" block>
+            Login Now
+          </ButtonComponent>
+
+          <DividerComponent text="Or" />
+
+          <ButtonComponent
+            size="large"
+            color="#000000"
+            block
+            icon={<GoogleIcon />}
+          >
+            Or sign in with Google
+          </ButtonComponent>
+        </form>
+      </div>
+
+      {/* Sign up link - at bottom */}
+      <div className="text-center py-4">
+        <span className="text-gray-600">Dont have an account? </span>
+        <Link
+          to="/register"
+          className="text-[#1EC5E0] hover:underline font-semibold"
+        >
+          Sign up now
+        </Link>
+      </div>
+    </div>
+  )
+}
+
+export default Login
