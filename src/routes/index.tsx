@@ -5,6 +5,8 @@ import Register from '@/components/auth/register'
 import ForgotPassword from '@/components/auth/forget-password'
 import OtpVerification from '@/components/auth/otp-verification'
 import ResetPassword from '@/components/auth/reset-password'
+import DashboardLayout from '@/layout/dashboard-layout'
+import MainDashboard from '@/components/dashboard/main/main'
 
 export const router = createBrowserRouter([
   {
@@ -45,6 +47,15 @@ export const router = createBrowserRouter([
       <AuthLayout>
         <ResetPassword />
       </AuthLayout>
+    ),
+  },
+
+  {
+    path: '/dashboard',
+    element: (
+      <DashboardLayout>
+        <MainDashboard />
+      </DashboardLayout>
     ),
   },
 ])

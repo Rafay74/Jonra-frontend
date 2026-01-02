@@ -34,7 +34,7 @@ const ResetPassword = () => {
             error={errors.email}
           />
 
-          <ButtonComponent size="large" color="#007AFF" block>
+          <ButtonComponent size="large" bgColor="#007AFF" block>
             Reset Password
           </ButtonComponent>
         </form>

@@ -1,9 +1,12 @@
 import { Button, type ButtonProps } from 'antd'
 import type { ReactNode } from 'react'
 
-interface IButtonProps extends Omit<ButtonProps, 'children' | 'type'> {
+interface IButtonProps extends Omit<
+  ButtonProps,
+  'children' | 'type' | 'color'
+> {
   children: ReactNode
-  color?: string
+  bgColor?: string
   className?: string
 }
 
@@ -12,15 +15,15 @@ const ButtonComponent = ({
   size = 'large',
   loading = false,
   block = false,
-  color,
+  bgColor,
   className,
   style,
   ...rest
 }: IButtonProps) => {
   const buttonStyle: React.CSSProperties = {
-    ...(color && {
-      backgroundColor: color,
-      borderColor: color,
+    ...(bgColor && {
+      backgroundColor: bgColor,
+      borderColor: bgColor,
     }),
     borderRadius: 999,
     height: 50,

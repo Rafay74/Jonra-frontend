@@ -119,7 +119,7 @@ const Register = () => {
             error={errors.password}
           />
 
-          <ButtonComponent size="large" color="#007AFF" block>
+          <ButtonComponent size="large" bgColor="#007AFF" block>
             Create Your Account
           </ButtonComponent>
         </form>

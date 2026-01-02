@@ -14,3 +14,10 @@ body {
 .ant-input-password input::placeholder {
   color: rgba(0, 0, 0, 0.3) !important;
 }
+
+/* Dark theme placeholder for search input */
+.search-input-dark .ant-input::placeholder,
+.search-input-dark input::placeholder {
+  color: rgba(255, 255, 255, 1) !important;
+  opacity: 1 !important;
+}

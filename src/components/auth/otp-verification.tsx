@@ -38,7 +38,7 @@ const OtpVerification = () => {
             />
           </div>
 
-          <ButtonComponent size="large" color="#007AFF" block>
+          <ButtonComponent size="large" bgColor="#007AFF" block>
             Next
           </ButtonComponent>
         </form>

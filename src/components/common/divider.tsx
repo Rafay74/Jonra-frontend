@@ -9,4 +9,3 @@ const DividerComponent = ({ text = 'Or', ...rest }: DividerComponentProps) => {
 }
 
 export default DividerComponent
-
