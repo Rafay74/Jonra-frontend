@@ -1,5 +1,5 @@
-import type { ReactNode } from 'react'
-import { Bell, Eye, Cloud, ChevronDown } from 'lucide-react'
+import { useState, type ReactNode } from 'react'
+import { Bell, Eye, Cloud, ChevronDown, Menu, X } from 'lucide-react'
 
 import InputField from '../components/common/input-field'
 import ButtonComponent from '@/components/common/button'
@@ -16,140 +16,171 @@ interface IDashboard {
 }
 
 const DashboardLayout = ({ children }: IDashboard) => {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+
   return (
-    <main className="min-h-screen bg-[#092835] flex p-4 gap-4">
-      {/* Sidebar */}
-      <aside
-        className="w-[380px] h-[calc(100vh)] bg-[#123C4E] flex flex-col shrink-0 rounded-4xl"
-        style={{ fontFamily: "'PolySans Trial', sans-serif" }}
-      >
-        <div className="px-6 py-6 flex justify-center items-center">
-          <img src={logo} alt="logo" className="w-auto h-auto" />
-        </div>
-
-        <nav className="flex-1 px-8 py-6">
-          <div className="space-y-1">
-            <div className="mb-4">
-              <div className="h-px bg-[#1a4d5f]  mb-4"></div>
-              <h2 className="text-white text-2xl font-extrabold">MAIN MENU</h2>
-            </div>
-
-            <div className="flex items-center gap-3 px-4 py-3 hover:bg-[#092835] rounded-2xl cursor-pointer">
-              <img src={Arrow} alt="arrow" />
-
-              <img src={Chart} alt="dashboard_logo" />
-              <span className="text-white font-medium">Dashboard</span>
-            </div>
-
-            <div className="flex items-center gap-3 px-4 py-3 hover:bg-[#092835] rounded-2xl cursor-pointer transition-colors">
-              <img src={Arrow} alt="arrow" />
-              <img src={Bag} alt="dashboard_logo" />
-              <span className="text-white">RFQ Library</span>
-            </div>
-
-            <div className="flex items-center gap-3 px-4 py-3 hover:bg-[#092835] rounded-2xl cursor-pointer transition-colors">
-              <img src={Arrow} alt="arrow" />
-              <img src={Bag} alt="dashboard_logo" />
-              <span className="text-white">Compliance Check</span>
-            </div>
-
-            <div className="flex items-center gap-3 px-4 py-3 hover:bg-[#092835] rounded-2xl cursor-pointer transition-colors">
-              <img src={Arrow} alt="arrow" />
-              <img src={Bag} alt="dashboard_logo" />
-              <span className="text-white">Proposal Generator</span>
-            </div>
+    <>
+      {isMobileMenuOpen && (
+        <div
+          className="fixed inset-0 bg-black/50 z-40 lg:hidden"
+          onClick={() => setIsMobileMenuOpen(false)}
+        />
+      )}
+      <main className="min-h-screen bg-[#092835] flex p-2 md:p-4 gap-2 md:gap-4">
+        <aside
+          className={`fixed lg:static inset-y-0 left-0 z-50 w-[280px] lg:w-[380px] xl:w-[320px] h-[calc(100vh)] bg-[#123C4E] flex flex-col shrink-0 rounded-4xl transform transition-transform duration-300 ${
+            isMobileMenuOpen
+              ? 'translate-x-0'
+              : '-translate-x-full lg:translate-x-0'
+          }`}
+          style={{ fontFamily: "'PolySans Trial', sans-serif" }}
+        >
+          <div className="px-6 py-6 flex justify-center items-center">
+            <img src={logo} alt="logo" className="w-auto h-auto" />
           </div>
 
-          <div className="mt-8 pt-8">
+          <nav className="flex-1 px-4 md:px-6 lg:px-8 py-4 md:py-6">
             <div className="space-y-1">
               <div className="mb-4">
                 <div className="h-px bg-[#1a4d5f]  mb-4"></div>
-                <h2 className="text-white text-2xl font-extrabold">SETTINGS</h2>
+                <h2 className="text-white text-xl lg:text-2xl font-extrabold">
+                  MAIN MENU
+                </h2>
               </div>
-              <div className="flex items-center gap-3 px-4 py-3 hover:bg-[#092835] rounded-2xl cursor-pointer transition-colors">
+
+              <div className="flex items-center gap-3 px-4 py-3 hover:bg-[#092835] rounded-2xl cursor-pointer">
                 <img src={Arrow} alt="arrow" />
-                <img src={Profile} alt="dashboard_logo" />
-                <span className="text-white">Profile Overview</span>
+
+                <img src={Chart} alt="dashboard_logo" />
+                <span className="text-white font-medium">Dashboard</span>
               </div>
 
               <div className="flex items-center gap-3 px-4 py-3 hover:bg-[#092835] rounded-2xl cursor-pointer transition-colors">
                 <img src={Arrow} alt="arrow" />
                 <img src={Bag} alt="dashboard_logo" />
-                <span className="text-white">Settings</span>
+                <span className="text-white">RFQ Library</span>
               </div>
 
               <div className="flex items-center gap-3 px-4 py-3 hover:bg-[#092835] rounded-2xl cursor-pointer transition-colors">
                 <img src={Arrow} alt="arrow" />
                 <img src={Bag} alt="dashboard_logo" />
-                <span className="text-white">Contact Us</span>
+                <span className="text-white">Compliance Check</span>
+              </div>
+
+              <div className="flex items-center gap-3 px-4 py-3 hover:bg-[#092835] rounded-2xl cursor-pointer transition-colors">
+                <img src={Arrow} alt="arrow" />
+                <img src={Bag} alt="dashboard_logo" />
+                <span className="text-white">Proposal Generator</span>
               </div>
             </div>
+
+            <div className="mt-8 pt-8">
+              <div className="space-y-1">
+                <div className="mb-4">
+                  <div className="h-px bg-[#1a4d5f]  mb-4"></div>
+                  <h2 className="text-white text-xl lg:text-2xl font-extrabold">
+                    SETTINGS
+                  </h2>
+                </div>
+                <div className="flex items-center gap-3 px-4 py-3 hover:bg-[#092835] rounded-2xl cursor-pointer transition-colors">
+                  <img src={Arrow} alt="arrow" />
+                  <img src={Profile} alt="dashboard_logo" />
+                  <span className="text-white">Profile Overview</span>
+                </div>
+
+                <div className="flex items-center gap-3 px-4 py-3 hover:bg-[#092835] rounded-2xl cursor-pointer transition-colors">
+                  <img src={Arrow} alt="arrow" />
+                  <img src={Bag} alt="dashboard_logo" />
+                  <span className="text-white">Settings</span>
+                </div>
+
+                <div className="flex items-center gap-3 px-4 py-3 hover:bg-[#092835] rounded-2xl cursor-pointer transition-colors">
+                  <img src={Arrow} alt="arrow" />
+                  <img src={Bag} alt="dashboard_logo" />
+                  <span className="text-white">Contact Us</span>
+                </div>
+              </div>
+            </div>
+          </nav>
+
+          <div className="px-8 pb-6">
+            <ButtonComponent
+              size="large"
+              color="#ffffff"
+              block
+              style={{ color: '#123C4E' }}
+            >
+              Logout
+            </ButtonComponent>
           </div>
-        </nav>
+        </aside>
 
-        <div className="px-8 pb-6">
-          <ButtonComponent
-            size="large"
-            bgColor="#ffffff"
-            block
-            style={{ color: '#123C4E' }}
-          >
-            Logout
-          </ButtonComponent>
-        </div>
-      </aside>
-
-      <div className="flex-1 flex flex-col">
-        <header className="bg-[#092835] px-6 py-4">
-          <div className="flex items-center gap-4">
-            <div className="flex-1 flex items-center gap-2 h-12 ">
-              <InputField
-                placeholder="Search"
-                className="flex-1 h-full rounded-xl bg-[#123C4E] px-4"
-              />
-
-              <ButtonComponent
-                className="h-full px-6 rounded-xl text-white font-medium"
-                style={{
-                  background:
-                    'linear-gradient(90deg, #1EC5E0 0%, #9F8EFF 100%)',
-                }}
+        <div className="flex-1 flex flex-col">
+          <header className="bg-[#092835] px-4 md:px-6 py-3 md:py-4">
+            <div className="flex items-center gap-4">
+              <button
+                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                className="lg:hidden p-2 rounded-lg bg-[#123C4E] text-white hover:bg-[#1a4d5f] transition-colors"
               >
-                Search
-              </ButtonComponent>
-            </div>
+                {isMobileMenuOpen ? (
+                  <X className="w-6 h-6" />
+                ) : (
+                  <Menu className="w-6 h-6" />
+                )}
+              </button>
+              <div className="flex-1 flex flex-col sm:flex-row items-stretch sm:items-center gap-2 h-auto sm:h-12">
+                <InputField
+                  placeholder="Search"
+                  className="flex-1 h-12 sm:h-full rounded-xl bg-[#123C4E] px-4"
+                />
 
-            <div className="flex items-center gap-3">
-              <div className="rounded-full bg-[#123C4E] p-4">
-                <Bell className="w-5 h-5 text-white" />
+                <ButtonComponent
+                  className="h-12 sm:h-full px-6 rounded-xl text-white font-medium shrink-0"
+                  style={{
+                    background:
+                      'linear-gradient(90deg, #1EC5E0 0%, #9F8EFF 100%)',
+                  }}
+                >
+                  Search
+                </ButtonComponent>
               </div>
-              <div className="rounded-full bg-[#123C4E] p-4">
-                <Eye className="w-5 h-5 text-white" />
+
+              <div className="flex items-center gap-2 md:gap-3">
+                <div className="rounded-full bg-[#123C4E] p-3 md:p-4">
+                  <Bell className="w-4 h-4 md:w-5 md:h-5 text-white" />
+                </div>
+                <div className="hidden sm:block rounded-full bg-[#123C4E] p-3 md:p-4">
+                  <Eye className="w-4 h-4 md:w-5 md:h-5 text-white" />
+                </div>
+                <div className="hidden md:block rounded-full bg-[#123C4E] p-3 md:p-4">
+                  <Cloud className="w-4 h-4 md:w-5 md:h-5 text-white" />
+                </div>
               </div>
-              <div className="rounded-full bg-[#123C4E] p-4">
-                <Cloud className="w-5 h-5 text-white" />
+
+              <div className="flex items-center gap-2 md:gap-3 pl-2 md:pl-4 border-l border-[#1a4d5f] cursor-pointer hover:opacity-80 transition-opacity">
+                <div className="rounded-full flex items-center justify-center">
+                  <img
+                    src={me}
+                    alt="logo_me"
+                    className="w-8 h-8 md:w-auto md:h-auto"
+                  />
+                </div>
+                <div className="hidden sm:flex flex-col">
+                  <span className="text-white font-medium text-sm">
+                    John Smith
+                  </span>
+                  <span className="text-gray-400 text-xs">Account</span>
+                </div>
+                <ChevronDown className="hidden sm:block w-4 h-4 text-gray-400" />
               </div>
             </div>
+          </header>
 
-            <div className="flex items-center gap-3 pl-4 border-l border-[#1a4d5f] cursor-pointer hover:opacity-80 transition-opacity">
-              <div className=" rounded-full flex items-center justify-center">
-                <img src={me} alt="logo_me" />
-              </div>
-              <div className="flex flex-col">
-                <span className="text-white font-medium text-sm">
-                  John Smith
-                </span>
-                <span className="text-gray-400 text-xs">Account</span>
-              </div>
-              <ChevronDown className="w-4 h-4 text-gray-400" />
-            </div>
-          </div>
-        </header>
-
-        {/* Page Content */}
-        <div className="flex-1 bg-[#092835] overflow-auto">{children}</div>
-      </div>
-    </main>
+          {/* Page Content */}
+          <div className="flex-1 bg-[#092835] overflow-auto">{children}</div>
+        </div>
+      </main>
+    </>
   )
 }
 

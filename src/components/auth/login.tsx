@@ -34,8 +34,11 @@ const Login = () => {
     <div className="w-full h-full flex flex-col">
       {/* Form centered vertically */}
       <div className="flex-1 flex items-center">
-        <form onSubmit={handleSubmit(onSubmit)} className="w-full space-y-6">
-          <h1 className="text-[40px] text-[#1EC5E0] font-black">
+        <form
+          onSubmit={handleSubmit(onSubmit)}
+          className="w-full space-y-4 lg:space-y-6"
+        >
+          <h1 className="text-2xl md:text-3xl lg:text-[40px] text-[#1EC5E0] font-black">
             WELCOME TO LIGHTNX
           </h1>
 
@@ -57,14 +60,14 @@ const Login = () => {
             error={errors.password}
           />
 
-          <div className="flex items-center justify-between">
+          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 sm:gap-0">
             <SwitchComponent label="Remember me" />
-            <Link to="/forgot-password" className="hover:underline">
+            <Link to="/forgot-password" className="text-[15px] hover:underline">
               Forgot password?
             </Link>
           </div>
 
-          <ButtonComponent size="large" bgColor="#007AFF" block>
+          <ButtonComponent size="large" color="#007AFF" block>
             Login Now
           </ButtonComponent>
 
@@ -72,7 +75,7 @@ const Login = () => {
 
           <ButtonComponent
             size="large"
-            bgColor="#000000"
+            color="#000000"
             block
             icon={<GoogleIcon />}
           >

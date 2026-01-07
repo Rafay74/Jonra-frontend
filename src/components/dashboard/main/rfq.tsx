@@ -3,9 +3,12 @@ import { Link } from 'react-router-dom'
 
 import rfq from '@/assets/rfq.svg'
 import filter from '@/assets/filter.svg'
+
 const Rfq = () => {
   return (
-    <div className="w-[600px] h-[400px] border-2 border-[#1EC5E066] rounded-4xl p-6 bg-[#123C4E]">
+    // <div className="w-full max-w-[660px] border-2 border-[#1EC5E066] rounded-4xl p-6 bg-[#123C4E] flex flex-col">
+    <div className="w-full border-2 border-[#1EC5E066] rounded-4xl p-6 bg-[#123C4E] flex flex-col h-full">
+      {/* Header */}
       <div className="flex justify-between items-center mb-4">
         <span className="text-[#1EC5E0] text-2xl font-semibold">
           RFQs Table
@@ -22,48 +25,49 @@ const Rfq = () => {
           </div>
         </div>
       </div>
-      <div className="grid grid-cols-2 gap-4">
-        {[1, 2, 3, 4].map((item) => (
-          <div
-            key={item}
-            className={`bg-white rounded-2xl  ${item > 2 ? 'opacity-10 ' : ''}`}
-          >
-            <div className="relative h-20 bg-white overflow-hidden p-2 rounded-2xl">
-              <img
-                src={rfq}
-                alt="rfq"
-                className="object-cover w-full h-full rounded-2xl"
-              />
-              <div className="absolute top-2 right-2 bg-[#d1eff4] px-2  rounded-lg flex items-center justify-center gap-1">
-                <img src={filter} alt="filter" className="w-3 h-3" />
-                <span className="text-white text-xs">Last 7 Days</span>
-              </div>
-            </div>
-            <div className="p-2 space-y-2">
-              <div className="text-[#092835] font-semibold text-lg">
-                RFQ (DLA)
-              </div>
-              <div className="flex items-center gap-2">
-                <div className="flex items-center gap-2 text-sm text-[#092835]">
-                  <Clock className="w-4 h-4" />
-                  <div>1:30hrs</div>
-                </div>
-                <div className="flex items-center gap-2 text-sm text-[#092835]">
-                  <Calendar className="w-4 h-4" />
-                  <div className="text-sm">
-                    <span>Date:</span>
-                    <span>22/11/2025</span>
+      <div className="grid grid-cols-2 gap-4 ">
+        {[1, 2].map((item) => (
+          <>
+            <div className="bg-red-200 mt-10">
+              <div
+                key={item}
+                className={`bg-white rounded-2xl  ${item > 2 ? 'opacity-40' : ''}`}
+              >
+                <div className="relative w-full h-20">
+                  {' '}
+                  <img
+                    src={rfq}
+                    alt="rfq"
+                    className="object-cover w-full h-full rounded-t-2xl"
+                  />
+                  <div className="absolute top-2 right-2 bg-[#d1eff4] px-2 rounded-lg flex items-center justify-center gap-1">
+                    <img src={filter} alt="filter" className="w-3 h-3" />
+                    <span className="text-white text-xs">Last 7 Days</span>
                   </div>
                 </div>
-                <div className="flex items-center gap-2 text-sm text-[#092835]">
-                  <Circle className="w-2 h-2 fill-[#9F8EFF] text-[#9F8EFF]" />
-                  <div className="flex gap-2">
-                    Status: <strong>Pending</strong>
+
+                <div className="p-2 space-y-2">
+                  <div className="text-[#092835] font-semibold text-lg">
+                    RFQ (DLA)
+                  </div>
+                  <div className="flex flex-wrap gap-2 items-center text-sm text-[#092835]">
+                    <div className="flex items-center gap-1">
+                      <Clock className="w-4 h-4" />
+                      1:30hrs
+                    </div>
+                    <div className="flex items-center gap-1">
+                      <Calendar className="w-4 h-4" />
+                      <span>Date: 22/11/2025</span>
+                    </div>
+                    <div className="flex items-center gap-1">
+                      <Circle className="w-2 h-2 fill-[#9F8EFF] text-[#9F8EFF]" />
+                      Status: <strong>Pending</strong>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
+          </>
         ))}
       </div>
     </div>

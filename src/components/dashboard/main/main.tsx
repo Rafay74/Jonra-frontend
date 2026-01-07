@@ -1,5 +1,4 @@
 import { METRICS_CARD } from '@/constants/data'
-
 import CardComponent from '../../common/card'
 
 import StatusPipeline from './status-pipeline'
@@ -11,12 +10,15 @@ import RfqUpload from './rfq-upload'
 
 const MainDashboard = () => {
   return (
-    <div className="p-6 space-y-6">
-      <div className="text-[#1EC5E0] text-2xl font-bold">Overview Metrics</div>
+    <div className="p-4 md:p-6 space-y-4 md:space-y-6">
+      <div className="text-[#1EC5E0] text-xl lg:text-2xl font-bold">
+        Overview Metrics
+      </div>
 
-      <div className="flex w-full justify-between gap-6">
-        <div className="space-y-9 flex-1 ">
-          <div className="flex-1 grid grid-cols-4 gap-4">
+      <div className="flex flex-col xl:flex-row gap-4 xl:gap-6 w-full">
+        {' '}
+        <div className="flex-1 space-y-6 min-w-0 ">
+          <div className="flex-1 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2 sm:gap-3 md:gap-4">
             {METRICS_CARD.map((metrics, index) => (
               <CardComponent
                 key={index}
@@ -28,15 +30,19 @@ const MainDashboard = () => {
               />
             ))}
           </div>
-
-          <div className="grid grid-cols-2 gap-2 mr-8">
-            <StatusPipeline />
-            <Rfq />
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-2 ">
+            {' '}
+            <div className="lg:flex-1">
+              <StatusPipeline />
+            </div>
+            <div className="lg:flex-1 lg:flex lg:justify-end">
+              <Rfq />
+            </div>
           </div>
           <TotalUsers />
         </div>
-
-        <div className="flex flex-col space-y-5">
+        <div className="flex flex-col space-y-4 xl:space-y-5 xl:w-[380px] 2xl:w-[450px] xl:shrink-0 min-w-0">
+          {' '}
           <RfqUpload />
           <Activities />
           <Traffic />

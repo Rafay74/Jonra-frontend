@@ -42,7 +42,7 @@ const Modal = ({ onClose, onDone, data }: ModalProps) => {
         <h1 className="text-[32px] text-white font-black mb-2">{data.title}</h1>
         <p className="text-white mb-8">{data.text}</p>
 
-        <ButtonComponent size="large" bgColor="#007AFF" block onClick={onDone}>
+        <ButtonComponent size="large" color="#007AFF" block onClick={onDone}>
           Done
         </ButtonComponent>
       </div>

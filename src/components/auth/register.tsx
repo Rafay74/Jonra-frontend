@@ -1,6 +1,7 @@
 import { useForm } from 'react-hook-form'
 import FormField from '../common/form-field'
 import ButtonComponent from '../common/button'
+import { Link } from 'react-router-dom'
 
 interface IRegister {
   name: string
@@ -27,7 +28,10 @@ const Register = () => {
   return (
     <div className="w-full h-full flex flex-col">
       <div className="flex-1 flex items-center">
-        <form onSubmit={handleSubmit(onSubmit)} className="w-full space-y-6">
+        <form
+          onSubmit={handleSubmit(onSubmit)}
+          className="w-full space-y-4 lg:space-y-6"
+        >
           <h1 className="text-[40px] text-[#1EC5E0] font-black ">
             CREATE AN ACCOUNT
           </h1>
@@ -119,7 +123,7 @@ const Register = () => {
             error={errors.password}
           />
 
-          <ButtonComponent size="large" bgColor="#007AFF" block>
+          <ButtonComponent size="large" color="#007AFF" block>
             Create Your Account
           </ButtonComponent>
         </form>
@@ -127,9 +131,9 @@ const Register = () => {
 
       <div className="text-center py-4">
         <span className="text-gray-600">Already have an account?</span>
-        <a href="#" className="text-[#1EC5E0] hover:underline font-semibold">
-          Login now
-        </a>
+        <Link to={'/'} className="text-[#1EC5E0] hover:underline font-semibold">
+          Login Now
+        </Link>
       </div>
     </div>
   )

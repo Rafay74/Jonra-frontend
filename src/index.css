@@ -1,4 +1,4 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 /* Set PolySans Trial as default font for entire application */
 body {
@@ -9,15 +9,56 @@ body {
   font-family: 'PolySans Trial', sans-serif;
 }
 
-/* Transparent placeholders for inputs */
 .ant-input::placeholder,
 .ant-input-password input::placeholder {
   color: rgba(0, 0, 0, 0.3) !important;
 }
 
-/* Dark theme placeholder for search input */
 .search-input-dark .ant-input::placeholder,
 .search-input-dark input::placeholder {
   color: rgba(255, 255, 255, 1) !important;
   opacity: 1 !important;
+}
+
+.btn.ant-btn {
+  height: 48px !important;
+  padding-left: 24px !important;
+  padding-right: 24px !important;
+}
+
+@media (min-width: 768px) {
+  .btn.ant-btn {
+    height: 50px !important;
+    padding-left: 32px !important;
+    padding-right: 32px !important;
+  }
+}
+
+/* Responsive Input Field Styles */
+.input-field-height {
+  height: 44px !important;
+}
+
+@media (min-width: 768px) {
+  .input-field-height {
+    height: 50px !important;
+  }
+}
+
+.input-field-height.ant-input,
+.input-field-height.ant-input-password input {
+  padding-left: 16px !important;
+  padding-right: 16px !important;
+}
+
+@media (min-width: 768px) {
+  .input-field-height.ant-input,
+  .input-field-height.ant-input-password input {
+    padding-left: 24px !important;
+    padding-right: 24px !important;
+  }
+}
+
+html {
+  overflow-x: hidden; /* Prevent horizontal scroll */
 }

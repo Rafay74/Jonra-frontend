@@ -11,7 +11,7 @@ interface ICard {
 const CardComponent = ({ title, value, subtitle, color, isFirst }: ICard) => {
   return (
     <div
-      className={`rounded-2xl p-6 flex flex-col gap-4 ${
+      className={`rounded-2xl p-3 sm:p-4 md:p-6 flex flex-col gap-2 sm:gap-3 md:gap-4 ${
         isFirst ? '' : `${color} bg-opacity-20`
       }`}
       style={
@@ -22,9 +22,15 @@ const CardComponent = ({ title, value, subtitle, color, isFirst }: ICard) => {
           : undefined
       }
     >
-      <div className={`font-semibold text-[#092835]`}>{title}</div>
+      <div
+        className={`font-semibold text-[#092835] text-xs sm:text-sm md:text-base truncate`}
+      >
+        {title}
+      </div>{' '}
       <div className="flex items-center justify-between">
-        <span className={`text-md text-[#092835]`}>Value</span>
+        <span className={`text-xs sm:text-sm md:text-md text-[#092835]`}>
+          Value
+        </span>
         <div className="flex items-center gap-2">
           <span className={`text-md text-[#092835]`}>{value}</span>
           <TrendingUp className={`w-4 h-4 text-[#092835]`} />

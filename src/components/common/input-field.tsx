@@ -21,13 +21,14 @@ const InputField = ({
   return (
     <div className="w-full">
       {label && (
-        <label className="block text-[18px] mb-2 text-gray-700 font-semibold">
+        <label className="block text-sm md:text-base lg:text-[18px] mb-2 text-gray-700 font-semibold">
+          {' '}
           {label}
           {required && <span className="text-red-500 ml-1">*</span>}
         </label>
       )}
       <InputComponent
-        className={`h-[50px]  ${className || ''}`}
+        className={`input-field-height ${className || ''}`}
         style={{
           fontSize: '16px',
           padding: '10px 24px',
