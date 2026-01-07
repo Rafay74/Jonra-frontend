@@ -106,7 +106,7 @@ const DashboardLayout = ({ children }: IDashboard) => {
           <div className="px-8 pb-6">
             <ButtonComponent
               size="large"
-              color="#ffffff"
+              bgColor="#ffffff"
               block
               style={{ color: '#123C4E' }}
             >

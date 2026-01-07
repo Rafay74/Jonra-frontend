@@ -67,7 +67,7 @@ const Login = () => {
             </Link>
           </div>
 
-          <ButtonComponent size="large" color="#007AFF" block>
+          <ButtonComponent size="large" bgColor="#007AFF" block>
             Login Now
           </ButtonComponent>
 
@@ -75,7 +75,7 @@ const Login = () => {
 
           <ButtonComponent
             size="large"
-            color="#000000"
+            bgColor="#000000"
             block
             icon={<GoogleIcon />}
           >

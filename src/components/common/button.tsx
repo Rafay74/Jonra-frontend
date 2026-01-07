@@ -3,7 +3,7 @@ import type { ReactNode } from 'react'
 
 interface IButtonProps extends Omit<ButtonProps, 'children' | 'type'> {
   children: ReactNode
-  color?: string
+  bgColor?: string
   className?: string
 }
 
@@ -12,15 +12,15 @@ const ButtonComponent = ({
   size = 'large',
   loading = false,
   block = false,
-  color,
+  bgColor,
   className,
   style,
   ...rest
 }: IButtonProps) => {
   const buttonStyle: React.CSSProperties = {
-    ...(color && {
-      backgroundColor: color,
-      borderColor: color,
+    ...(bgColor && {
+      backgroundColor: bgColor,
+      borderColor: bgColor,
     }),
     borderRadius: 999,
     ...style,

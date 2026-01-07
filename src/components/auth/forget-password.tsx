@@ -37,7 +37,7 @@ const ForgotPassword = () => {
             error={errors.email}
           />
 
-          <ButtonComponent size="large" color="#007AFF" block>
+          <ButtonComponent size="large" bgColor="#007AFF" block>
             Next
           </ButtonComponent>
         </form>
