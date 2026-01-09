@@ -15,10 +15,9 @@ const MainDashboard = () => {
         Overview Metrics
       </div>
 
-      <div className="flex flex-col xl:flex-row gap-4 xl:gap-6 w-full">
-        {' '}
-        <div className="flex-1 space-y-6 min-w-0 ">
-          <div className="flex-1 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2 sm:gap-3 md:gap-4">
+      <div className="flex flex-col xl:flex-row gap-4 md:gap-5 lg:gap-6 w-full">
+        <div className="flex-1 space-y-4 md:space-y-5 lg:space-y-6 min-w-0">
+          <div className="flex-1 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5 lg:gap-6">
             {METRICS_CARD.map((metrics, index) => (
               <CardComponent
                 key={index}
@@ -30,8 +29,7 @@ const MainDashboard = () => {
               />
             ))}
           </div>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-2 ">
-            {' '}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-5 lg:gap-6">
             <div className="lg:flex-1">
               <StatusPipeline />
             </div>
@@ -41,8 +39,8 @@ const MainDashboard = () => {
           </div>
           <TotalUsers />
         </div>
-        <div className="flex flex-col space-y-4 xl:space-y-5 xl:w-[380px] 2xl:w-[450px] xl:shrink-0 min-w-0">
-          {' '}
+
+        <div className="flex flex-col space-y-4 md:space-y-5 lg:space-y-5 xl:space-y-6 xl:w-[320px] 2xl:w-[400px] xl:shrink-0 min-w-0">
           <RfqUpload />
           <Activities />
           <Traffic />

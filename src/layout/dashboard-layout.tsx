@@ -4,12 +4,12 @@ import { Bell, Eye, Cloud, ChevronDown, Menu, X } from 'lucide-react'
 import InputField from '../components/common/input-field'
 import ButtonComponent from '@/components/common/button'
 
-import Chart from '../assets/ChartPieSlice.svg'
-import Bag from '../assets/bag.svg'
-import Profile from '../assets/profile.svg'
-import Arrow from '../assets/arrow.svg'
-import logo from '../assets/Mask group.svg'
-import me from '../assets/me.svg'
+import Chart from '@/assets/ChartPieSlice.svg'
+import Bag from '@/assets/bag.svg'
+import Profile from '@/assets/profile.svg'
+import Arrow from '@/assets/arrow.svg'
+import logo from '@/assets/Mask group.svg'
+import me from '@/assets/me.svg'
 
 interface IDashboard {
   children?: ReactNode
@@ -28,7 +28,7 @@ const DashboardLayout = ({ children }: IDashboard) => {
       )}
       <main className="min-h-screen bg-[#092835] flex p-2 md:p-4 gap-2 md:gap-4">
         <aside
-          className={`fixed lg:static inset-y-0 left-0 z-50 w-[280px] lg:w-[380px] xl:w-[320px] h-[calc(100vh)] bg-[#123C4E] flex flex-col shrink-0 rounded-4xl transform transition-transform duration-300 ${
+          className={`fixed lg:static inset-y-0 left-0 z-50 w-[280px] lg:w-[300px] xl:w-[320px]   bg-[#123C4E] flex flex-col shrink-0 rounded-4xl transform transition-transform duration-300 ${
             isMobileMenuOpen
               ? 'translate-x-0'
               : '-translate-x-full lg:translate-x-0'
@@ -116,7 +116,7 @@ const DashboardLayout = ({ children }: IDashboard) => {
         </aside>
 
         <div className="flex-1 flex flex-col">
-          <header className="bg-[#092835] px-4 md:px-6 py-3 md:py-4">
+          <header className="bg-[#092835] px-4 md:px-6 lg:px-8 py-3 md:py-4">
             <div className="flex items-center gap-4">
               <button
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}

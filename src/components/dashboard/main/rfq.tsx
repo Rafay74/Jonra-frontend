@@ -6,7 +6,6 @@ import filter from '@/assets/filter.svg'
 
 const Rfq = () => {
   return (
-    // <div className="w-full max-w-[660px] border-2 border-[#1EC5E066] rounded-4xl p-6 bg-[#123C4E] flex flex-col">
     <div className="w-full border-2 border-[#1EC5E066] rounded-4xl p-6 bg-[#123C4E] flex flex-col h-full">
       {/* Header */}
       <div className="flex justify-between items-center mb-4">
@@ -25,14 +24,12 @@ const Rfq = () => {
           </div>
         </div>
       </div>
-      <div className="grid grid-cols-2 gap-4 ">
+      <div className="grid grid-cols-2 gap-4">
         {[1, 2].map((item) => (
-          <>
-            <div className="bg-red-200 mt-10">
-              <div
-                key={item}
-                className={`bg-white rounded-2xl  ${item > 2 ? 'opacity-40' : ''}`}
-              >
+          <div
+            key={item}
+            className={`bg-white rounded-2xl ${item > 2 ? 'opacity-40' : ''}`}
+          >
                 <div className="relative w-full h-20">
                   {' '}
                   <img
@@ -66,8 +63,6 @@ const Rfq = () => {
                   </div>
                 </div>
               </div>
-            </div>
-          </>
         ))}
       </div>
     </div>

@@ -11,8 +11,6 @@ import {
 
 const StatusPipeline = () => {
   return (
-    //<div className="w-full max-w-[660px] aspect-7/5 border-2 border-[#1EC5E066] rounded-4xl p-6 bg-[#123C4E]">
-    // <div className="w-full border-2 border-[#1EC5E066] rounded-4xl p-6 bg-[#123C4E] flex flex-col h-full">
     <div className="w-full border-2 border-[#1EC5E066] rounded-4xl p-3 sm:p-4 md:p-6 bg-[#123C4E] flex flex-col h-full">
       <div className="text-[#1EC5E0] text-base sm:text-lg md:text-xl lg:text-2xl font-semibold mb-2 sm:mb-3 md:mb-4">
         {' '}

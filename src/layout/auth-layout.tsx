@@ -1,6 +1,6 @@
 import type { ReactNode } from 'react'
-import cover from '../assets/background.svg'
-import logo from '../assets/FF 1.svg'
+import cover from '@/assets/background.svg'
+import logo from '@/assets/FF 1.svg'
 
 interface IAuthLayout {
   children: ReactNode
@@ -9,7 +9,7 @@ interface IAuthLayout {
 const AuthLayout = ({ children }: IAuthLayout) => {
   return (
     <main
-      className="relative min-h-screen "
+      className="relative min-h-screen"
       style={{
         backgroundImage: `url(${cover})`,
         backgroundSize: 'cover',
@@ -17,16 +17,17 @@ const AuthLayout = ({ children }: IAuthLayout) => {
         backgroundRepeat: 'no-repeat',
       }}
     >
-      <div className="flex flex-col lg:flex-row min-h-screen">
-        <div className="flex justify-center items-center py-6 lg:hidden">
-          <img src={logo} alt={'logo'} className="h-16 lg:h-auto" />
+      <div className="flex flex-col lg:flex-row min-h-screen p-6 lg:p-12 xl:p-16 gap-6 lg:gap-8">
+        <div className="flex justify-center items-center lg:hidden">
+          <img src={logo} alt={'logo'} className="h-16" />
         </div>
 
-        <div className="lg:m-20 lg:w-[1100px] bg-[#C9F7FF] rounded-4xl hidden lg:flex justify-center items-center">
-          <img src={logo} alt={'logo'} className="" />
+        <div className="hidden lg:flex lg:w-[45%] xl:w-[50%] bg-[#C9F7FF] rounded-4xl justify-center items-center shrink-0">
+          <img src={logo} alt={'logo'} className="max-w-[70%] h-auto" />
         </div>
-        <div className="m-10 lg:m-20 flex-1 flex flex-col ">
-          <div className="flex-1 w-full max-w-[500px] mx-auto py-8">
+
+        <div className="flex-1 flex flex-col min-w-0">
+          <div className="flex-1 w-full max-w-[600px] mx-auto py-8">
             {children}
           </div>
         </div>
