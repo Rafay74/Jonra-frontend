@@ -1,9 +1,8 @@
 import { useForm } from 'react-hook-form'
-import FormField from '../common/form-field'
-import ButtonComponent from '../common/button'
-import SwitchComponent from '../common/checkbox'
-import DividerComponent from '../common/divider'
+
 import { Link } from 'react-router-dom'
+import { FormField } from '../molecules'
+import { ButtonAtom, DividerAtom, SwitchAtom } from '../atoms'
 
 interface ILogin {
   email: string
@@ -61,26 +60,26 @@ const Login = () => {
           />
 
           <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 sm:gap-0">
-            <SwitchComponent label="Remember me" />
+            <SwitchAtom label="Remember me" />
             <Link to="/forgot-password" className="text-[15px] hover:underline">
               Forgot password?
             </Link>
           </div>
 
-          <ButtonComponent size="large" bgColor="#007AFF" block>
+          <ButtonAtom size="large" bgColor="#007AFF" block>
             Login Now
-          </ButtonComponent>
+          </ButtonAtom>
 
-          <DividerComponent text="Or" />
+          <DividerAtom text="Or" />
 
-          <ButtonComponent
+          <ButtonAtom
             size="large"
             bgColor="#000000"
             block
             icon={<GoogleIcon />}
           >
             Or sign in with Google
-          </ButtonComponent>
+          </ButtonAtom>
         </form>
       </div>
 

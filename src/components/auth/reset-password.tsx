@@ -1,7 +1,6 @@
 import { useForm } from 'react-hook-form'
-import FormField from '../common/form-field'
-import ButtonComponent from '../common/button'
-
+import { FormField } from '../molecules'
+import { ButtonAtom } from '../atoms'
 interface IResetPassword {
   email: string
 }
@@ -37,9 +36,9 @@ const ResetPassword = () => {
             error={errors.email}
           />
 
-          <ButtonComponent size="large" bgColor="#007AFF" block>
+          <ButtonAtom size="large" bgColor="#007AFF" block>
             Reset Password
-          </ButtonComponent>
+          </ButtonAtom>
         </form>
       </div>
     </div>

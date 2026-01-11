@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { Input } from 'antd'
-import ButtonComponent from '../common/button'
+import { ButtonAtom } from '../atoms'
 
 const OtpVerification = () => {
   const [otp, setOtp] = useState('')
@@ -38,9 +38,9 @@ const OtpVerification = () => {
             />
           </div>
 
-          <ButtonComponent size="large" bgColor="#007AFF" block>
+          <ButtonAtom size="large" bgColor="#007AFF" block>
             Next
-          </ButtonComponent>
+          </ButtonAtom>
         </form>
       </div>
     </div>

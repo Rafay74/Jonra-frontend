@@ -5,11 +5,7 @@ interface SwitchComponentProps extends SwitchProps {
   label?: ReactNode
 }
 
-const SwitchComponent = ({
-  label,
-  className,
-  ...rest
-}: SwitchComponentProps) => {
+const SwitchAtom = ({ label, className, ...rest }: SwitchComponentProps) => {
   return (
     <div className={`flex items-center gap-2 ${className || ''}`}>
       <Switch size="small" {...rest} />
@@ -18,4 +14,4 @@ const SwitchComponent = ({
   )
 }
 
-export default SwitchComponent
+export { SwitchAtom }

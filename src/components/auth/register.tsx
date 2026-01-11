@@ -1,7 +1,8 @@
 import { useForm } from 'react-hook-form'
-import FormField from '../common/form-field'
-import ButtonComponent from '../common/button'
+
 import { Link } from 'react-router-dom'
+import { FormField } from '../molecules'
+import { ButtonAtom } from '../atoms'
 
 interface IRegister {
   name: string
@@ -123,9 +124,9 @@ const Register = () => {
             error={errors.password}
           />
 
-          <ButtonComponent size="large" bgColor="#007AFF" block>
+          <ButtonAtom size="large" bgColor="#007AFF" block>
             Create Your Account
-          </ButtonComponent>
+          </ButtonAtom>
         </form>
       </div>
 

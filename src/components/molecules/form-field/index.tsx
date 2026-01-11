@@ -3,7 +3,7 @@ import {
   type FieldError,
   type Path,
 } from 'react-hook-form'
-import InputField from './input-field'
+import { InputField } from '../input-field'
 
 interface FormFieldProps<T extends Record<string, any>> {
   type?: 'text' | 'password' | 'email'
@@ -38,4 +38,4 @@ const FormField = <T extends Record<string, any>>({
   )
 }
 
-export default FormField
+export { FormField }

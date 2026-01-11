@@ -1,5 +1,4 @@
 import { METRICS_CARD } from '@/constants/data'
-import CardComponent from '../../common/card'
 
 import StatusPipeline from './status-pipeline'
 import Rfq from './rfq'
@@ -7,6 +6,7 @@ import TotalUsers from './total-users'
 import Activities from './activities'
 import Traffic from './traffic'
 import RfqUpload from './rfq-upload'
+import { CardComponent } from '@/components/molecules'
 
 const MainDashboard = () => {
   return (

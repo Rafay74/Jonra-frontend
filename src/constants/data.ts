@@ -91,3 +91,47 @@ export const PIPELINE_DATA = [
     Remaining: 15,
   },
 ]
+
+export const RFQ_LIBRARY = [
+  {
+    description:
+      'Overhaul of components for F-7GS Aircraft Fleet (Foreign Bidders only) - Limited International',
+    country: 'USA',
+    deadline: '14 Jan 2025',
+  },
+  {
+    description: 'MQ9 Unmanned Aircraft Systems',
+    country: 'Spain',
+    deadline: '17 Dec 2025',
+  },
+  {
+    description: 'MQ9 Unmanned Aircraft Systems',
+    country: 'Spain',
+    deadline: '17 Dec 2025',
+  },
+  {
+    description: 'MQ9 Unmanned Aircraft Systems',
+    country: 'Spain',
+    deadline: '17 Dec 2025',
+  },
+  {
+    description: 'MQ9 Unmanned Aircraft Systems',
+    country: 'Spain',
+    deadline: '17 Dec 2025',
+  },
+  {
+    description: 'MQ9 Unmanned Aircraft Systems',
+    country: 'Spain',
+    deadline: '17 Dec 2025',
+  },
+  {
+    description: 'MQ9 Unmanned Aircraft Systems',
+    country: 'Spain',
+    deadline: '17 Dec 2025',
+  },
+  {
+    description: 'MQ9 Unmanned Aircraft Systems',
+    country: 'Spain',
+    deadline: '17 Dec 2025',
+  },
+]

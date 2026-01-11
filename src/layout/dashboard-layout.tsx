@@ -1,15 +1,15 @@
 import { useState, type ReactNode } from 'react'
 import { Bell, Eye, Cloud, ChevronDown, Menu, X } from 'lucide-react'
 
-import InputField from '../components/common/input-field'
-import ButtonComponent from '@/components/common/button'
-
 import Chart from '@/assets/ChartPieSlice.svg'
 import Bag from '@/assets/bag.svg'
 import Profile from '@/assets/profile.svg'
 import Arrow from '@/assets/arrow.svg'
 import logo from '@/assets/Mask group.svg'
 import me from '@/assets/me.svg'
+
+import { ButtonAtom } from '@/components/atoms'
+import { InputField, SearchBar } from '@/components/molecules'
 
 interface IDashboard {
   children?: ReactNode
@@ -104,14 +104,14 @@ const DashboardLayout = ({ children }: IDashboard) => {
           </nav>
 
           <div className="px-8 pb-6">
-            <ButtonComponent
+            <ButtonAtom
               size="large"
               bgColor="#ffffff"
               block
               style={{ color: '#123C4E' }}
             >
               Logout
-            </ButtonComponent>
+            </ButtonAtom>
           </div>
         </aside>
 
@@ -128,13 +128,13 @@ const DashboardLayout = ({ children }: IDashboard) => {
                   <Menu className="w-6 h-6" />
                 )}
               </button>
-              <div className="flex-1 flex flex-col sm:flex-row items-stretch sm:items-center gap-2 h-auto sm:h-12">
+              {/* <div className="flex-1 flex flex-col sm:flex-row items-stretch sm:items-center gap-2 h-auto sm:h-12">
                 <InputField
                   placeholder="Search"
                   className="flex-1 h-12 sm:h-full rounded-xl bg-[#123C4E] px-4"
                 />
 
-                <ButtonComponent
+                <ButtonAtom
                   className="h-12 sm:h-full px-6 rounded-xl text-white font-medium shrink-0"
                   style={{
                     background:
@@ -142,8 +142,9 @@ const DashboardLayout = ({ children }: IDashboard) => {
                   }}
                 >
                   Search
-                </ButtonComponent>
-              </div>
+                </ButtonAtom>
+              </div> */}
+              <SearchBar />
 
               <div className="flex items-center gap-2 md:gap-3">
                 <div className="rounded-full bg-[#123C4E] p-3 md:p-4">

@@ -7,7 +7,7 @@ interface IButtonProps extends Omit<ButtonProps, 'children' | 'type'> {
   className?: string
 }
 
-const ButtonComponent = ({
+const ButtonAtom = ({
   children,
   size = 'large',
   loading = false,
@@ -41,4 +41,4 @@ const ButtonComponent = ({
   )
 }
 
-export default ButtonComponent
+export { ButtonAtom }

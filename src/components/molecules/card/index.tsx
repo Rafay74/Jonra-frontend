@@ -42,4 +42,4 @@ const CardComponent = ({ title, value, subtitle, color, isFirst }: ICard) => {
   )
 }
 
-export default CardComponent
+export { CardComponent }

@@ -1,19 +1,22 @@
 import { createBrowserRouter } from 'react-router-dom'
 import AuthLayout from '@/layout/auth-layout'
-import Login from '@/components/auth/login'
-import Register from '@/components/auth/register'
-import ForgotPassword from '@/components/auth/forget-password'
-import OtpVerification from '@/components/auth/otp-verification'
-import ResetPassword from '@/components/auth/reset-password'
 import DashboardLayout from '@/layout/dashboard-layout'
 import MainDashboard from '@/components/dashboard/main/main'
+import {
+  ForgotPasswordPage,
+  LoginPage,
+  OtpVerificationPage,
+  RegisterPage,
+  ResetPasswordPage,
+} from '@/pages/auth'
+import { RfqLibrary } from '@/components/dashboard/rfq-library'
 
 export const router = createBrowserRouter([
   {
     path: '/',
     element: (
       <AuthLayout>
-        <Login />
+        <LoginPage />
       </AuthLayout>
     ),
   },
@@ -21,7 +24,7 @@ export const router = createBrowserRouter([
     path: '/register',
     element: (
       <AuthLayout>
-        <Register />
+        <RegisterPage />
       </AuthLayout>
     ),
   },
@@ -29,7 +32,7 @@ export const router = createBrowserRouter([
     path: '/forgot-password',
     element: (
       <AuthLayout>
-        <ForgotPassword />
+        <ForgotPasswordPage />
       </AuthLayout>
     ),
   },
@@ -37,7 +40,7 @@ export const router = createBrowserRouter([
     path: '/otp-verification',
     element: (
       <AuthLayout>
-        <OtpVerification />
+        <OtpVerificationPage />
       </AuthLayout>
     ),
   },
@@ -45,16 +48,25 @@ export const router = createBrowserRouter([
     path: '/reset-password',
     element: (
       <AuthLayout>
-        <ResetPassword />
+        <ResetPasswordPage />
       </AuthLayout>
     ),
   },
 
+  //dashboard
   {
     path: '/dashboard',
     element: (
       <DashboardLayout>
         <MainDashboard />
+      </DashboardLayout>
+    ),
+  },
+  {
+    path: '/rfq-library',
+    element: (
+      <DashboardLayout>
+        <RfqLibrary />
       </DashboardLayout>
     ),
   },
