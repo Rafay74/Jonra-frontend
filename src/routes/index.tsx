@@ -1,7 +1,9 @@
 import { createBrowserRouter } from 'react-router-dom'
+
 import AuthLayout from '@/layout/auth-layout'
 import DashboardLayout from '@/layout/dashboard-layout'
 import MainDashboard from '@/components/dashboard/main/main'
+
 import {
   ForgotPasswordPage,
   LoginPage,
@@ -9,7 +11,8 @@ import {
   RegisterPage,
   ResetPasswordPage,
 } from '@/pages/auth'
-import { RfqLibrary } from '@/components/dashboard/rfq-library'
+import { AllRfqsPage, RfqDetailsPage } from '@/pages/rfq'
+import { ComplianceCheckPage } from '@/pages/compliance'
 
 export const router = createBrowserRouter([
   {
@@ -66,7 +69,24 @@ export const router = createBrowserRouter([
     path: '/rfq-library',
     element: (
       <DashboardLayout>
-        <RfqLibrary />
+        <AllRfqsPage />
+      </DashboardLayout>
+    ),
+  },
+  {
+    path: '/rfq-detail/:id',
+    element: (
+      <DashboardLayout>
+        <RfqDetailsPage />
+      </DashboardLayout>
+    ),
+  },
+
+  {
+    path: '/compliance-check',
+    element: (
+      <DashboardLayout>
+        <ComplianceCheckPage />
       </DashboardLayout>
     ),
   },
