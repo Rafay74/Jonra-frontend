@@ -1,6 +1,4 @@
 import { Table } from 'antd'
-import { createStyles } from 'antd-style'
-
 import type { TableProps, TableColumnsType } from 'antd'
 
 interface TableMoleculeProps<T> extends Omit<TableProps<T>, 'className'> {

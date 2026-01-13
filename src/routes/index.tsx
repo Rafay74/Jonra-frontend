@@ -13,6 +13,7 @@ import {
 } from '@/pages/auth'
 import { AllRfqsPage, RfqDetailsPage } from '@/pages/rfq'
 import { ComplianceCheckPage } from '@/pages/compliance'
+import { ContactPage } from '@/pages/contact'
 
 export const router = createBrowserRouter([
   {
@@ -87,6 +88,15 @@ export const router = createBrowserRouter([
     element: (
       <DashboardLayout>
         <ComplianceCheckPage />
+      </DashboardLayout>
+    ),
+  },
+
+  {
+    path: '/contact',
+    element: (
+      <DashboardLayout>
+        <ContactPage />
       </DashboardLayout>
     ),
   },

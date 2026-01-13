@@ -9,7 +9,8 @@ import logo from '@/assets/Mask group.svg'
 import me from '@/assets/me.svg'
 
 import { ButtonAtom } from '@/components/atoms'
-import { InputField, SearchBar } from '@/components/molecules'
+import { SearchBar } from '@/components/molecules'
+import { Link } from 'react-router-dom'
 
 interface IDashboard {
   children?: ReactNode
@@ -48,24 +49,30 @@ const DashboardLayout = ({ children }: IDashboard) => {
                 </h2>
               </div>
 
-              <div className="flex items-center gap-3 px-4 py-3 hover:bg-[#092835] rounded-2xl cursor-pointer">
-                <img src={Arrow} alt="arrow" />
+              <Link to={'/dashboard'}>
+                <div className="flex items-center gap-3 px-4 py-3 hover:bg-[#092835] rounded-2xl cursor-pointer">
+                  <img src={Arrow} alt="arrow" />
 
-                <img src={Chart} alt="dashboard_logo" />
-                <span className="text-white font-medium">Dashboard</span>
-              </div>
+                  <img src={Chart} alt="dashboard_logo" />
+                  <span className="text-white font-medium">Dashboard</span>
+                </div>
+              </Link>
 
-              <div className="flex items-center gap-3 px-4 py-3 hover:bg-[#092835] rounded-2xl cursor-pointer transition-colors">
-                <img src={Arrow} alt="arrow" />
-                <img src={Bag} alt="dashboard_logo" />
-                <span className="text-white">RFQ Library</span>
-              </div>
+              <Link to={'/rfq-library'}>
+                <div className="flex items-center gap-3 px-4 py-3 hover:bg-[#092835] rounded-2xl cursor-pointer transition-colors">
+                  <img src={Arrow} alt="arrow" />
+                  <img src={Bag} alt="dashboard_logo" />
+                  <span className="text-white">RFQ Library</span>
+                </div>
+              </Link>
 
-              <div className="flex items-center gap-3 px-4 py-3 hover:bg-[#092835] rounded-2xl cursor-pointer transition-colors">
-                <img src={Arrow} alt="arrow" />
-                <img src={Bag} alt="dashboard_logo" />
-                <span className="text-white">Compliance Check</span>
-              </div>
+              <Link to={'/compliance-check'}>
+                <div className="flex items-center gap-3 px-4 py-3 hover:bg-[#092835] rounded-2xl cursor-pointer transition-colors">
+                  <img src={Arrow} alt="arrow" />
+                  <img src={Bag} alt="dashboard_logo" />
+                  <span className="text-white">Compliance Check</span>
+                </div>
+              </Link>
 
               <div className="flex items-center gap-3 px-4 py-3 hover:bg-[#092835] rounded-2xl cursor-pointer transition-colors">
                 <img src={Arrow} alt="arrow" />
