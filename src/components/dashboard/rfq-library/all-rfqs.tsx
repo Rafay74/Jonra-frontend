@@ -10,7 +10,7 @@ const RfqLibrary = () => {
         <span className="font-normal">(Global Aircraft Fleet RFQ )</span>
       </div>
 
-      <div className="bg-[#123C4E] h-screen rounded-2xl p-8 flex flex-col gap-4 overflow-y-scroll">
+      <div className="bg-[#C9C9C933] h-screen rounded-2xl p-8 flex flex-col gap-4 overflow-y-scroll">
         {RFQ_LIBRARY.map((rfq) => {
           return (
             <>

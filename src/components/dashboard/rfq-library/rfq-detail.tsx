@@ -6,7 +6,7 @@ const RfqDetail = () => {
       <div className="text-[#1EC5E0] text-xl lg:text-2xl font-bold">
         Procurement Summary
       </div>
-      <div className="bg-[#123C4E] h-screen rounded-2xl p-8 flex flex-col gap-4 overflow-y-auto">
+      <div className="bg-[#C9C9C933] h-screen rounded-2xl p-8 flex flex-col gap-4 overflow-y-auto">
         <div className="bg-[#C5F7FF] rounded-3xl p-4 flex flex-col gap-2">
           <div className="flex items-center gap-2 ">
             <span className="text-black font-bold text-md">Country:</span>

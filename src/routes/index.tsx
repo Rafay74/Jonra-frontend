@@ -11,9 +11,12 @@ import {
   RegisterPage,
   ResetPasswordPage,
 } from '@/pages/auth'
+
 import { AllRfqsPage, RfqDetailsPage } from '@/pages/rfq'
 import { ComplianceCheckPage } from '@/pages/compliance'
 import { ContactPage } from '@/pages/contact'
+import { SettingPage } from '@/pages/setting'
+import { ProposalGeneratorPage } from '@/pages/proposalgenerator'
 
 export const router = createBrowserRouter([
   {
@@ -97,6 +100,22 @@ export const router = createBrowserRouter([
     element: (
       <DashboardLayout>
         <ContactPage />
+      </DashboardLayout>
+    ),
+  },
+  {
+    path: '/settings',
+    element: (
+      <DashboardLayout>
+        <SettingPage />
+      </DashboardLayout>
+    ),
+  },
+  {
+    path: '/proposal-generator',
+    element: (
+      <DashboardLayout>
+        <ProposalGeneratorPage />
       </DashboardLayout>
     ),
   },
