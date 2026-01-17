@@ -1,13 +1,20 @@
 import { FormField } from '@/components/molecules'
-import type { FieldError, UseFormRegister } from 'react-hook-form'
+import type { FieldErrors, FieldError, UseFormRegister } from 'react-hook-form'
 
 interface IBillingSection {
   title: string
   register: UseFormRegister<any>
-  errors: Record<string, FieldError | undefined>
+  errors: FieldErrors<any>
 }
 
 const BillingSection = ({ title, register, errors }: IBillingSection) => {
+  // Helper function to safely get error
+  const getError = (
+    error: FieldErrors<any>[string]
+  ): FieldError | undefined => {
+    return error && 'message' in error ? (error as FieldError) : undefined
+  }
+
   return (
     <div className="space-y-4">
       <h3 className="text-white font-medium">{title}</h3>
@@ -17,28 +24,28 @@ const BillingSection = ({ title, register, errors }: IBillingSection) => {
           placeholder="Name"
           name="name"
           register={register}
-          error={errors.name}
+          error={getError(errors.name)}
         />
 
         <FormField
           placeholder="Last Name"
           name="lastName"
           register={register}
-          error={errors.lastName}
+          error={getError(errors.lastName)}
         />
 
         <FormField
           placeholder="State"
           name="state"
           register={register}
-          error={errors.state}
+          error={getError(errors.state)}
         />
 
         <FormField
           placeholder="Postal Code"
           name="postalCode"
           register={register}
-          error={errors.postalCode}
+          error={getError(errors.postalCode)}
         />
 
         <div className="col-span-2">
@@ -46,7 +53,7 @@ const BillingSection = ({ title, register, errors }: IBillingSection) => {
             placeholder="City"
             name="city"
             register={register}
-            error={errors.city}
+            error={getError(errors.city)}
           />
         </div>
 
@@ -54,13 +61,13 @@ const BillingSection = ({ title, register, errors }: IBillingSection) => {
           placeholder="Add Phone No"
           name="phoneNo"
           register={register}
-          error={errors.phoneNo}
+          error={getError(errors.phoneNo)}
         />
         <FormField
           placeholder="Add GST"
           name="gst"
           register={register}
-          error={errors.gst}
+          error={getError(errors.gst)}
         />
 
         <div className="col-span-2">
@@ -68,7 +75,7 @@ const BillingSection = ({ title, register, errors }: IBillingSection) => {
             placeholder="Add Email Address"
             name="email"
             register={register}
-            error={errors.email}
+            error={getError(errors.email)}
           />
         </div>
       </div>

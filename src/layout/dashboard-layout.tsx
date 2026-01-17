@@ -108,17 +108,21 @@ const DashboardLayout = ({ children }: IDashboard) => {
                   <span className="text-white">Profile Overview</span>
                 </div>
 
-                <div className="flex items-center gap-3 px-4 py-3 hover:bg-[#092835] rounded-2xl cursor-pointer transition-colors">
-                  <img src={Arrow} alt="arrow" />
-                  <img src={Bag} alt="dashboard_logo" />
-                  <span className="text-white">Settings</span>
-                </div>
+                <Link to={'/settings'}>
+                  <div className="flex items-center gap-3 px-4 py-3 hover:bg-[#092835] rounded-2xl cursor-pointer transition-colors">
+                    <img src={Arrow} alt="arrow" />
+                    <img src={Bag} alt="dashboard_logo" />
+                    <span className="text-white">Settings</span>
+                  </div>
+                </Link>
 
-                <div className="flex items-center gap-3 px-4 py-3 hover:bg-[#092835] rounded-2xl cursor-pointer transition-colors">
-                  <img src={Arrow} alt="arrow" />
-                  <img src={Bag} alt="dashboard_logo" />
-                  <span className="text-white">Contact Us</span>
-                </div>
+                <Link to={'/contact'}>
+                  <div className="flex items-center gap-3 px-4 py-3 hover:bg-[#092835] rounded-2xl cursor-pointer transition-colors">
+                    <img src={Arrow} alt="arrow" />
+                    <img src={Bag} alt="dashboard_logo" />
+                    <span className="text-white">Contact Us</span>
+                  </div>
+                </Link>
               </div>
             </div>
           </nav>
