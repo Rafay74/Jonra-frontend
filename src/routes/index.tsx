@@ -96,13 +96,16 @@ export const router = createBrowserRouter([
   },
 
   {
-    path: '/contact',
+    path: '/proposal-generator',
     element: (
       <DashboardLayout>
-        <ContactPage />
+        <ProposalGeneratorPage />
       </DashboardLayout>
     ),
   },
+
+  //SETTINGS
+
   {
     path: '/settings',
     element: (
@@ -111,11 +114,12 @@ export const router = createBrowserRouter([
       </DashboardLayout>
     ),
   },
+
   {
-    path: '/proposal-generator',
+    path: '/contact',
     element: (
       <DashboardLayout>
-        <ProposalGeneratorPage />
+        <ContactPage />
       </DashboardLayout>
     ),
   },

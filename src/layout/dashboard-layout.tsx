@@ -11,13 +11,21 @@ import me from '@/assets/me.svg'
 import { ButtonAtom } from '@/components/atoms'
 import { SearchBar } from '@/components/molecules'
 import { Link } from 'react-router-dom'
+import { ProfileModal } from '@/components/molecules/modal'
 
 interface IDashboard {
   children?: ReactNode
 }
 
 const DashboardLayout = ({ children }: IDashboard) => {
+  const [isProfileModalOpen, setIsProfileModalOpen] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+
+  const openProfileModal = () => {
+    setIsProfileModalOpen(true)
+  }
+
+  const closeProfileModal = () => setIsProfileModalOpen(false)
 
   return (
     <>
@@ -27,6 +35,9 @@ const DashboardLayout = ({ children }: IDashboard) => {
           onClick={() => setIsMobileMenuOpen(false)}
         />
       )}
+
+      {isProfileModalOpen && <ProfileModal onClose={closeProfileModal} />}
+
       <main className="min-h-screen bg-[#092835] flex p-2 md:p-4 gap-2 md:gap-4">
         <aside
           className={`fixed lg:static inset-y-0 left-0 z-50 w-[280px] lg:w-[300px] xl:w-[320px]   bg-[#123C4E] flex flex-col shrink-0 rounded-4xl transform transition-transform duration-300 ${
@@ -74,11 +85,13 @@ const DashboardLayout = ({ children }: IDashboard) => {
                 </div>
               </Link>
 
-              <div className="flex items-center gap-3 px-4 py-3 hover:bg-[#092835] rounded-2xl cursor-pointer transition-colors">
-                <img src={Arrow} alt="arrow" />
-                <img src={Bag} alt="dashboard_logo" />
-                <span className="text-white">Proposal Generator</span>
-              </div>
+              <Link to={'/proposal-generator'}>
+                <div className="flex items-center gap-3 px-4 py-3 hover:bg-[#092835] rounded-2xl cursor-pointer transition-colors">
+                  <img src={Arrow} alt="arrow" />
+                  <img src={Bag} alt="dashboard_logo" />
+                  <span className="text-white">Proposal Generator</span>
+                </div>
+              </Link>
             </div>
 
             <div className="mt-8 pt-8">
@@ -135,22 +148,7 @@ const DashboardLayout = ({ children }: IDashboard) => {
                   <Menu className="w-6 h-6" />
                 )}
               </button>
-              {/* <div className="flex-1 flex flex-col sm:flex-row items-stretch sm:items-center gap-2 h-auto sm:h-12">
-                <InputField
-                  placeholder="Search"
-                  className="flex-1 h-12 sm:h-full rounded-xl bg-[#123C4E] px-4"
-                />
 
-                <ButtonAtom
-                  className="h-12 sm:h-full px-6 rounded-xl text-white font-medium shrink-0"
-                  style={{
-                    background:
-                      'linear-gradient(90deg, #1EC5E0 0%, #9F8EFF 100%)',
-                  }}
-                >
-                  Search
-                </ButtonAtom>
-              </div> */}
               <SearchBar />
 
               <div className="flex items-center gap-2 md:gap-3">
@@ -166,7 +164,10 @@ const DashboardLayout = ({ children }: IDashboard) => {
               </div>
 
               <div className="flex items-center gap-2 md:gap-3 pl-2 md:pl-4 border-l border-[#1a4d5f] cursor-pointer hover:opacity-80 transition-opacity">
-                <div className="rounded-full flex items-center justify-center">
+                <div
+                  className="rounded-full flex items-center justify-center"
+                  onClick={() => openProfileModal()}
+                >
                   <img
                     src={me}
                     alt="logo_me"
@@ -184,7 +185,6 @@ const DashboardLayout = ({ children }: IDashboard) => {
             </div>
           </header>
 
-          {/* Page Content */}
           <div className="flex-1 bg-[#092835] overflow-auto">{children}</div>
         </div>
       </main>
