@@ -29,13 +29,8 @@ const Register = () => {
   return (
     <div className="w-full h-full flex flex-col">
       <div className="flex-1 flex items-center">
-        <form
-          onSubmit={handleSubmit(onSubmit)}
-          className="w-full space-y-4 lg:space-y-6"
-        >
-          <h1 className="text-[40px] text-[#1EC5E0] font-black ">
-            CREATE AN ACCOUNT
-          </h1>
+        <form onSubmit={handleSubmit(onSubmit)} className="w-full space-y-4 lg:space-y-6">
+          <h1 className="text-[40px] text-[#1EC5E0] font-black ">CREATE AN ACCOUNT</h1>
 
           <FormField
             type="text"

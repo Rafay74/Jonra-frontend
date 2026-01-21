@@ -21,22 +21,14 @@ const TotalUsers = () => {
         </div>
       </div>
       <ResponsiveContainer width="100%" height={300}>
-        <LineChart
-          data={USER_DATA}
-          margin={{ top: 5, right: 30, left: 20, bottom: 5 }}
-        >
+        <LineChart data={USER_DATA} margin={{ top: 5, right: 30, left: 20, bottom: 5 }}>
           <CartesianGrid
             strokeDasharray="3 3"
             stroke="#1a4d5f"
             horizontal={true}
             vertical={false}
           />
-          <XAxis
-            dataKey="month"
-            stroke="#9ca3af"
-            fontSize={12}
-            tick={{ fill: '#fff' }}
-          />
+          <XAxis dataKey="month" stroke="#9ca3af" fontSize={12} tick={{ fill: '#fff' }} />
           <YAxis
             stroke="#9ca3af"
             fontSize={12}
@@ -62,9 +54,7 @@ const TotalUsers = () => {
           <Legend
             wrapperStyle={{ paddingTop: '20px' }}
             iconType="circle"
-            formatter={(value) => (
-              <span style={{ color: '#fff', fontSize: '12px' }}>{value}</span>
-            )}
+            formatter={(value) => <span style={{ color: '#fff', fontSize: '12px' }}>{value}</span>}
           />
           <Line
             type="monotone"

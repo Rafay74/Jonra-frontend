@@ -11,9 +11,7 @@ import { CardComponent } from '@/components/molecules'
 const MainDashboard = () => {
   return (
     <div className="p-4 md:p-6 space-y-4 md:space-y-6">
-      <div className="text-[#1EC5E0] text-xl lg:text-2xl font-bold">
-        Overview Metrics
-      </div>
+      <div className="text-[#1EC5E0] text-xl lg:text-2xl font-bold">Overview Metrics</div>
 
       <div className="flex flex-col xl:flex-row gap-4 md:gap-5 lg:gap-6 w-full">
         <div className="flex-1 space-y-4 md:space-y-5 lg:space-y-6 min-w-0">

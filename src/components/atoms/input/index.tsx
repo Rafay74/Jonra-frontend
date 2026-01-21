@@ -4,12 +4,7 @@ interface IInputAtomProps extends InputProps {
   type?: 'text' | 'password' | 'email'
 }
 
-const InputAtom = ({
-  type = 'text',
-  className,
-  style,
-  ...rest
-}: IInputAtomProps) => {
+const InputAtom = ({ type = 'text', className, style, ...rest }: IInputAtomProps) => {
   const InputComponent = type === 'password' ? Input.Password : Input
 
   return (

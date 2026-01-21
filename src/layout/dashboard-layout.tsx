@@ -11,7 +11,7 @@ import me from '@/assets/me.svg'
 import { ButtonAtom } from '@/components/atoms'
 import { SearchBar } from '@/components/molecules'
 import { Link } from 'react-router-dom'
-import { ProfileModal } from '@/components/molecules/modal'
+import { ProfileModal, StatusModal } from '@/components/molecules/modal'
 
 interface IDashboard {
   children?: ReactNode
@@ -36,14 +36,15 @@ const DashboardLayout = ({ children }: IDashboard) => {
         />
       )}
 
-      {isProfileModalOpen && <ProfileModal onClose={closeProfileModal} />}
+      {isProfileModalOpen && (
+        // <ProfileModal onClose={closeProfileModal} />
+        <StatusModal onClose={closeProfileModal} />
+      )}
 
       <main className="min-h-screen bg-[#092835] flex p-2 md:p-4 gap-2 md:gap-4">
         <aside
           className={`fixed lg:static inset-y-0 left-0 z-50 w-[280px] lg:w-[300px] xl:w-[320px]   bg-[#123C4E] flex flex-col shrink-0 rounded-4xl transform transition-transform duration-300 ${
-            isMobileMenuOpen
-              ? 'translate-x-0'
-              : '-translate-x-full lg:translate-x-0'
+            isMobileMenuOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'
           }`}
           style={{ fontFamily: "'PolySans Trial', sans-serif" }}
         >
@@ -55,9 +56,7 @@ const DashboardLayout = ({ children }: IDashboard) => {
             <div className="space-y-1">
               <div className="mb-4">
                 <div className="h-px bg-[#1a4d5f]  mb-4"></div>
-                <h2 className="text-white text-xl lg:text-2xl font-extrabold">
-                  MAIN MENU
-                </h2>
+                <h2 className="text-white text-xl lg:text-2xl font-extrabold">MAIN MENU</h2>
               </div>
 
               <Link to={'/dashboard'}>
@@ -98,15 +97,15 @@ const DashboardLayout = ({ children }: IDashboard) => {
               <div className="space-y-1">
                 <div className="mb-4">
                   <div className="h-px bg-[#1a4d5f]  mb-4"></div>
-                  <h2 className="text-white text-xl lg:text-2xl font-extrabold">
-                    SETTINGS
-                  </h2>
+                  <h2 className="text-white text-xl lg:text-2xl font-extrabold">SETTINGS</h2>
                 </div>
-                <div className="flex items-center gap-3 px-4 py-3 hover:bg-[#092835] rounded-2xl cursor-pointer transition-colors">
-                  <img src={Arrow} alt="arrow" />
-                  <img src={Profile} alt="dashboard_logo" />
-                  <span className="text-white">Profile Overview</span>
-                </div>
+                <Link to={'/profile-overview'}>
+                  <div className="flex items-center gap-3 px-4 py-3 hover:bg-[#092835] rounded-2xl cursor-pointer transition-colors">
+                    <img src={Arrow} alt="arrow" />
+                    <img src={Profile} alt="dashboard_logo" />
+                    <span className="text-white">Profile Overview</span>
+                  </div>
+                </Link>
 
                 <Link to={'/settings'}>
                   <div className="flex items-center gap-3 px-4 py-3 hover:bg-[#092835] rounded-2xl cursor-pointer transition-colors">
@@ -128,12 +127,7 @@ const DashboardLayout = ({ children }: IDashboard) => {
           </nav>
 
           <div className="px-8 pb-6">
-            <ButtonAtom
-              size="large"
-              bgColor="#ffffff"
-              block
-              style={{ color: '#123C4E' }}
-            >
+            <ButtonAtom size="large" bgColor="#ffffff" block style={{ color: '#123C4E' }}>
               Logout
             </ButtonAtom>
           </div>
@@ -146,11 +140,7 @@ const DashboardLayout = ({ children }: IDashboard) => {
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                 className="lg:hidden p-2 rounded-lg bg-[#123C4E] text-white hover:bg-[#1a4d5f] transition-colors"
               >
-                {isMobileMenuOpen ? (
-                  <X className="w-6 h-6" />
-                ) : (
-                  <Menu className="w-6 h-6" />
-                )}
+                {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
               </button>
 
               <SearchBar />
@@ -172,16 +162,10 @@ const DashboardLayout = ({ children }: IDashboard) => {
                   className="rounded-full flex items-center justify-center"
                   onClick={() => openProfileModal()}
                 >
-                  <img
-                    src={me}
-                    alt="logo_me"
-                    className="w-8 h-8 md:w-auto md:h-auto"
-                  />
+                  <img src={me} alt="logo_me" className="w-8 h-8 md:w-auto md:h-auto" />
                 </div>
                 <div className="hidden sm:flex flex-col">
-                  <span className="text-white font-medium text-sm">
-                    John Smith
-                  </span>
+                  <span className="text-white font-medium text-sm">John Smith</span>
                   <span className="text-gray-400 text-xs">Account</span>
                 </div>
                 <ChevronDown className="hidden sm:block w-4 h-4 text-gray-400" />

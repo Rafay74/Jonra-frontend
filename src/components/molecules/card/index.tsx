@@ -22,15 +22,11 @@ const CardComponent = ({ title, value, subtitle, color, isFirst }: ICard) => {
           : undefined
       }
     >
-      <div
-        className={`font-semibold text-[#092835] text-xs sm:text-sm md:text-base truncate`}
-      >
+      <div className={`font-semibold text-[#092835] text-xs sm:text-sm md:text-base truncate`}>
         {title}
       </div>{' '}
       <div className="flex items-center justify-between">
-        <span className={`text-xs sm:text-sm md:text-md text-[#092835]`}>
-          Value
-        </span>
+        <span className={`text-xs sm:text-sm md:text-md text-[#092835]`}>Value</span>
         <div className="flex items-center gap-2">
           <span className={`text-md text-[#092835]`}>{value}</span>
           <TrendingUp className={`w-4 h-4 text-[#092835]`} />

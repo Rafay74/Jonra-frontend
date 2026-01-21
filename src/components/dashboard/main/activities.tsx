@@ -27,12 +27,8 @@ const Activities = () => {
               </div>
 
               <div className="flex-1 pt-1 min-w-0">
-                <h3 className="text-white font-medium mb-1 truncate">
-                  {activity.name}
-                </h3>
-                <p className="text-gray-400 text-sm truncate">
-                  {activity.description}
-                </p>
+                <h3 className="text-white font-medium mb-1 truncate">{activity.name}</h3>
+                <p className="text-gray-400 text-sm truncate">{activity.description}</p>
 
                 {index === ACTIVITES.length - 1 && (
                   <>
@@ -41,9 +37,7 @@ const Activities = () => {
                     </p>
                     <button className="mt-3 flex items-center gap-2 text-[#1EC5E0] hover:text-[#1EC5E0]/80 transition-colors">
                       <Download className="w-4 h-4" />
-                      <span className="text-sm font-medium">
-                        Download DOCX/XLSX
-                      </span>
+                      <span className="text-sm font-medium">Download DOCX/XLSX</span>
                     </button>
                   </>
                 )}

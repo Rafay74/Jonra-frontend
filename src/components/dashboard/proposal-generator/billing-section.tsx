@@ -8,10 +8,7 @@ interface IBillingSection {
 }
 
 const BillingSection = ({ title, register, errors }: IBillingSection) => {
-  // Helper function to safely get error
-  const getError = (
-    error: FieldErrors<any>[string]
-  ): FieldError | undefined => {
+  const getError = (error: FieldErrors<any>[string]): FieldError | undefined => {
     return error && 'message' in error ? (error as FieldError) : undefined
   }
 

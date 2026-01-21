@@ -33,10 +33,7 @@ const Login = () => {
     <div className="w-full h-full flex flex-col">
       {/* Form centered vertically */}
       <div className="flex-1 flex items-center">
-        <form
-          onSubmit={handleSubmit(onSubmit)}
-          className="w-full space-y-4 lg:space-y-6"
-        >
+        <form onSubmit={handleSubmit(onSubmit)} className="w-full space-y-4 lg:space-y-6">
           <h1 className="text-2xl md:text-3xl lg:text-[40px] text-[#1EC5E0] font-black">
             WELCOME TO LIGHTNX
           </h1>
@@ -72,12 +69,7 @@ const Login = () => {
 
           <DividerAtom text="Or" />
 
-          <ButtonAtom
-            size="large"
-            bgColor="#000000"
-            block
-            icon={<GoogleIcon />}
-          >
+          <ButtonAtom size="large" bgColor="#000000" block icon={<GoogleIcon />}>
             Or sign in with Google
           </ButtonAtom>
         </form>
@@ -86,10 +78,7 @@ const Login = () => {
       {/* Sign up link - at bottom */}
       <div className="text-center py-4">
         <span className="text-gray-600">Dont have an account? </span>
-        <Link
-          to="/register"
-          className="text-[#1EC5E0] hover:underline font-semibold"
-        >
+        <Link to="/register" className="text-[#1EC5E0] hover:underline font-semibold">
           Sign up now
         </Link>
       </div>

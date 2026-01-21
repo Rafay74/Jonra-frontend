@@ -17,6 +17,9 @@ import { ComplianceCheckPage } from '@/pages/compliance'
 import { ContactPage } from '@/pages/contact'
 import { SettingPage } from '@/pages/setting'
 import { ProposalGeneratorPage } from '@/pages/proposalgenerator'
+import { ProfilePage } from '@/pages/profile'
+import { SettingPrivacyPage } from '@/pages/setting/privacy'
+import { SettingHelpPage } from '@/pages/setting/help'
 
 export const router = createBrowserRouter([
   {
@@ -105,12 +108,38 @@ export const router = createBrowserRouter([
   },
 
   //SETTINGS
+  {
+    path: '/profile-overview',
+    element: (
+      <DashboardLayout>
+        <ProfilePage />
+      </DashboardLayout>
+    ),
+  },
 
   {
     path: '/settings',
     element: (
       <DashboardLayout>
         <SettingPage />
+      </DashboardLayout>
+    ),
+  },
+
+  {
+    path: '/settings/privacy',
+    element: (
+      <DashboardLayout>
+        <SettingPrivacyPage />
+      </DashboardLayout>
+    ),
+  },
+
+  {
+    path: '/settings/help',
+    element: (
+      <DashboardLayout>
+        <SettingHelpPage />
       </DashboardLayout>
     ),
   },

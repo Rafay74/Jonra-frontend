@@ -1,19 +1,19 @@
 export const SETTING_DATA = [
   {
     title: 'Account',
-    path: '/setting/account',
+    path: '/settings/account',
   },
   {
     title: 'Notifications',
-    path: '/setting/notifications',
+    path: '/settings/notifications',
   },
   {
     title: 'Privacy & Security',
-    path: '/setting/account',
+    path: '/settings/privacy',
   },
 
   {
     title: 'Help & Support',
-    path: '/setting/account',
+    path: '/settings/account',
   },
 ]

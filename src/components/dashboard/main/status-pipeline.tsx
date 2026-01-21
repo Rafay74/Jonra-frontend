@@ -1,13 +1,5 @@
 import { PIPELINE_DATA } from '@/constants/data'
-import {
-  BarChart,
-  Bar,
-  CartesianGrid,
-  ResponsiveContainer,
-  Tooltip,
-  XAxis,
-  YAxis,
-} from 'recharts'
+import { BarChart, Bar, CartesianGrid, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts'
 
 const StatusPipeline = () => {
   return (
@@ -28,10 +20,7 @@ const StatusPipeline = () => {
       </div>
       <div className="w-full flex-1 min-h-[290px]">
         <ResponsiveContainer width="100%" height="100%">
-          <BarChart
-            data={PIPELINE_DATA}
-            margin={{ top: 5, right: 30, left: 20, bottom: 5 }}
-          >
+          <BarChart data={PIPELINE_DATA} margin={{ top: 5, right: 30, left: 20, bottom: 5 }}>
             <CartesianGrid
               strokeDasharray="3 3"
               stroke="#1a4d5f"
@@ -67,18 +56,8 @@ const StatusPipeline = () => {
                 color: '#fff',
               }}
             />
-            <Bar
-              dataKey="Progress"
-              stackId="a"
-              fill="#1EC5E0"
-              radius={[0, 0, 6, 6]}
-            />
-            <Bar
-              dataKey="Remaining"
-              stackId="a"
-              fill="#9ca3af"
-              radius={[6, 6, 0, 0]}
-            />
+            <Bar dataKey="Progress" stackId="a" fill="#1EC5E0" radius={[0, 0, 6, 6]} />
+            <Bar dataKey="Remaining" stackId="a" fill="#9ca3af" radius={[6, 6, 0, 0]} />
           </BarChart>
         </ResponsiveContainer>
       </div>

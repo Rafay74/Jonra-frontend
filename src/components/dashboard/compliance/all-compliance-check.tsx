@@ -8,9 +8,7 @@ const AllComplianceCheck = () => {
 
   return (
     <div className="h-full flex flex-col p-4 md:p-6 gap-4 md:gap-6">
-      <div className="text-[#1EC5E0] text-xl lg:text-2xl font-bold">
-        Compliance Check
-      </div>
+      <div className="text-[#1EC5E0] text-xl lg:text-2xl font-bold">Compliance Check</div>
 
       <div className="flex-1 min-h-0 overflow-hidden">
         <div className="w-full h-full overflow-x-auto">

@@ -13,10 +13,9 @@ const ContactContent = () => {
             </span>
 
             <p className="text-white text-base md:text-lg lg:text-xl">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis
-              repellat, voluptatem voluptatibus delectus nemo quaerat quidem
-              nesciunt ut possimus qui dignissimos iusto voluptatum facilis
-              maxime explicabo corrupti perspiciatis a perferendis!
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis repellat, voluptatem
+              voluptatibus delectus nemo quaerat quidem nesciunt ut possimus qui dignissimos iusto
+              voluptatum facilis maxime explicabo corrupti perspiciatis a perferendis!
             </p>
 
             <div className="flex flex-col gap-4 md:gap-6 text-white text-base md:text-lg lg:text-xl">
@@ -25,9 +24,7 @@ const ContactContent = () => {
                   <MapPin className="w-6 h-6 md:w-8 md:h-8" />
                 </div>
                 <div className="flex flex-col gap-1 md:gap-2">
-                  <span className="text-sm md:text-base lg:text-lg">
-                    Location
-                  </span>
+                  <span className="text-sm md:text-base lg:text-lg">Location</span>
                   <span className="text-xs md:text-sm lg:text-base">
                     123 Literary Lane, Booktown, USA 45678
                   </span>
@@ -39,12 +36,8 @@ const ContactContent = () => {
                   <Phone className="w-6 h-6 md:w-8 md:h-8" />
                 </div>
                 <div className="flex flex-col gap-1 md:gap-2">
-                  <span className="text-sm md:text-base lg:text-lg">
-                    Phone Number
-                  </span>
-                  <span className="text-xs md:text-sm lg:text-base">
-                    (+62) 1234 567 890
-                  </span>
+                  <span className="text-sm md:text-base lg:text-lg">Phone Number</span>
+                  <span className="text-xs md:text-sm lg:text-base">(+62) 1234 567 890</span>
                 </div>
               </div>
 
@@ -53,12 +46,8 @@ const ContactContent = () => {
                   <Mail className="w-6 h-6 md:w-8 md:h-8" />
                 </div>
                 <div className="flex flex-col gap-1 md:gap-2">
-                  <span className="text-sm md:text-base lg:text-lg">
-                    Email Address
-                  </span>
-                  <span className="text-xs md:text-sm lg:text-base">
-                    lipsum@mail.com
-                  </span>
+                  <span className="text-sm md:text-base lg:text-lg">Email Address</span>
+                  <span className="text-xs md:text-sm lg:text-base">lipsum@mail.com</span>
                 </div>
               </div>
             </div>

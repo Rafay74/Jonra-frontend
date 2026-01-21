@@ -1,8 +1,4 @@
-import {
-  type UseFormRegister,
-  type FieldError,
-  type Path,
-} from 'react-hook-form'
+import { type UseFormRegister, type FieldError, type Path } from 'react-hook-form'
 import { InputField } from '../input-field'
 
 interface FormFieldProps<T extends Record<string, any>> {
@@ -14,6 +10,7 @@ interface FormFieldProps<T extends Record<string, any>> {
   error?: FieldError
   required?: boolean
   valueAsNumber?: boolean
+  labelClassName?: string
 }
 
 const FormField = <T extends Record<string, any>>({
@@ -25,6 +22,7 @@ const FormField = <T extends Record<string, any>>({
   error,
   required,
   valueAsNumber,
+  labelClassName,
 }: FormFieldProps<T>) => {
   return (
     <InputField
@@ -33,6 +31,7 @@ const FormField = <T extends Record<string, any>>({
       label={label}
       required={required}
       error={error?.message}
+      labelClassName={labelClassName}
       {...register(name, { valueAsNumber })}
     />
   )
