@@ -36,6 +36,7 @@ const ProposalGenerator = () => {
             <span className="text-lg md:text-xl font-bold text-[#1EC5E0]">Information</span>
 
             <ButtonAtom
+              htmlType='submit'
               className="h-11 px-4 md:px-6 rounded-xl text-white font-medium w-full sm:w-auto"
               style={{
                 background: 'linear-gradient(90deg, #1EC5E0 0%, #9F8EFF 100%)',

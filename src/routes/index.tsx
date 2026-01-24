@@ -14,12 +14,16 @@ import {
 
 import { AllRfqsPage, RfqDetailsPage } from '@/pages/rfq'
 import { ComplianceCheckPage } from '@/pages/compliance'
+
 import { ContactPage } from '@/pages/contact'
-import { SettingPage } from '@/pages/setting'
-import { ProposalGeneratorPage } from '@/pages/proposalgenerator'
 import { ProfilePage } from '@/pages/profile'
+
+import { SettingPage } from '@/pages/setting'
 import { SettingPrivacyPage } from '@/pages/setting/privacy'
 import { SettingHelpPage } from '@/pages/setting/help'
+
+import { AllProposalGeneratorsPage, ProposalGeneratorPage } from '@/pages/proposalgenerator'
+
 
 export const router = createBrowserRouter([
   {
@@ -103,6 +107,15 @@ export const router = createBrowserRouter([
     element: (
       <DashboardLayout>
         <ProposalGeneratorPage />
+      </DashboardLayout>
+    ),
+  },
+
+  {
+    path: '/all-proposals',
+    element: (
+      <DashboardLayout>
+        <AllProposalGeneratorsPage />
       </DashboardLayout>
     ),
   },

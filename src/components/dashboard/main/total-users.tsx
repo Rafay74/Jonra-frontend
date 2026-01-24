@@ -14,7 +14,7 @@ const TotalUsers = () => {
   return (
     <div className="w-full border-2 border-[#1EC5E066] rounded-4xl p-6 bg-[#123C4E]">
       <div className="flex items-center justify-between mb-4 gap-4">
-        <div className="text-[#1EC5E0] text-2xl font-semibold">Total Users</div>
+        <div className="text-[#1EC5E0] text-2xl font-semibold">Total Clients</div>
         <div className="flex items-center gap-4 text-white font-semibold text-sm">
           <span>A: RFQs Uploaded by Month</span>
           <span>B: Win-Rate Tracker</span>

@@ -53,43 +53,7 @@ const SettingPrivacy = () => {
             <SwitchAtom />
           </div>
 
-          <div className=" bg-gray-600 p-6 rounded-2xl flex flex-col lg:items-center justify-between gap-6 lg:flex-row">
-            <div className="flex flex-col gap-4 lg:flex-row lg:items-center">
-              <div className="flex flex-col gap-2">
-                <span className="text-white text-2xl font-semibold">Ad Personalization</span>
-                <span className="text-gray-200">Use my data to personalize ads.</span>
-              </div>
-            </div>
-            <SwitchAtom />
-          </div>
 
-          <div className=" bg-gray-600 p-6 rounded-2xl flex flex-col lg:items-center justify-between gap-6 lg:flex-row">
-            <div className="flex flex-col gap-4 lg:flex-row lg:items-center">
-              <div className="flex flex-col gap-2">
-                <span className="text-white text-2xl font-semibold">Third-Party Apps</span>
-                <span className="text-gray-200">Manage apps connected to your account</span>
-              </div>
-            </div>
-            <ButtonAtom
-              className="h-10 px-4 rounded-lg text-white font-medium ml-4"
-              style={{
-                background: 'transparent',
-                border: '1px solid white',
-              }}
-            >
-              Manage Apps
-            </ButtonAtom>
-          </div>
-
-          <div className=" bg-gray-600 p-6 rounded-2xl flex flex-col lg:items-center justify-between gap-6 lg:flex-row">
-            <div className="flex flex-col gap-4 lg:flex-row lg:items-center">
-              <div className="flex flex-col gap-2">
-                <span className="text-white text-2xl font-semibold">Data Sharing</span>
-                <span className="text-gray-200">Allow apps usage data to improve features.</span>
-              </div>
-            </div>
-            <SwitchAtom />
-          </div>
         </div>
       </div>
     </>

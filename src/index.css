@@ -62,3 +62,16 @@ body {
 html {
   overflow-x: hidden; /* Prevent horizontal scroll */
 }
+
+.compact-dragger {
+  padding: 12px !important;
+  min-height: 110px !important;
+}
+
+.compact-dragger .ant-upload-drag-icon {
+  margin-bottom: 6px;
+}
+
+.compact-dragger .ant-upload-text {
+  font-size: 14px;
+}

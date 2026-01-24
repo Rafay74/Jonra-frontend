@@ -9,7 +9,7 @@ interface IProfileModal {
 const ProfileModal = ({ onClose }: IProfileModal) => {
   return (
     <div className="fixed inset-0 bg-black/40 backdrop-blur-sm z-80 flex items-center justify-center p-4">
-      <div className="bg-white rounded-2xl p-4 md:p-6 w-full max-w-xl max-h-[90vh] md:max-h-[80vh] flex flex-col justify-between overflow-y-auto">
+      <div className="bg-white rounded-2xl p-4 md:p-6 w-full max-w-xl max-h-[90vh] md:max-h-[80vh] flex flex-col justify-between ">
         <div className="flex justify-end mb-4">
           <div className="rounded-full border p-2 cursor-pointer w-fit" onClick={onClose}>
             <img src={CrossIcon} alt="cross" className="w-4 h-4 md:w-5 md:h-5" />

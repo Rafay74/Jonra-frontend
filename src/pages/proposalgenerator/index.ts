@@ -1,1 +1,2 @@
-export * from './proposalgenerator'
+export * from './generator'
+export * from './all-proposals'

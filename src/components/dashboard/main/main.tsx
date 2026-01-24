@@ -1,7 +1,6 @@
 import { METRICS_CARD } from '@/constants/data'
 
 import StatusPipeline from './status-pipeline'
-import Rfq from './rfq'
 import TotalUsers from './total-users'
 import Activities from './activities'
 import Traffic from './traffic'
@@ -27,13 +26,13 @@ const MainDashboard = () => {
               />
             ))}
           </div>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-5 lg:gap-6">
+          <div className="grid grid-cols-1  gap-4 md:gap-5 lg:gap-6">
             <div className="lg:flex-1">
               <StatusPipeline />
             </div>
-            <div className="lg:flex-1 lg:flex lg:justify-end">
+            {/* <div className="lg:flex-1 lg:flex lg:justify-end">
               <Rfq />
-            </div>
+            </div> */}
           </div>
           <TotalUsers />
         </div>

@@ -1,7 +1,7 @@
 import { Button, type ButtonProps } from 'antd'
 import type { ReactNode } from 'react'
 
-interface IButtonProps extends Omit<ButtonProps, 'children' | 'type'> {
+interface IButtonProps extends Omit<ButtonProps, 'children'> {
   children: ReactNode
   bgColor?: string
   className?: string
@@ -15,6 +15,7 @@ const ButtonAtom = ({
   bgColor,
   className,
   style,
+  htmlType = 'button',
   ...rest
 }: IButtonProps) => {
   const buttonStyle: React.CSSProperties = {
@@ -29,6 +30,7 @@ const ButtonAtom = ({
   return (
     <Button
       type="primary"
+      htmlType={htmlType}
       size={size}
       loading={loading}
       block={block}

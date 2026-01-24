@@ -135,3 +135,11 @@ export const RFQ_LIBRARY = [
     deadline: '17 Dec 2025',
   },
 ]
+
+
+export const ALL_PROPOSALS = [
+  {
+    name: "Proposal 1",
+    description: "This is a dummy proposal"
+  }
+]

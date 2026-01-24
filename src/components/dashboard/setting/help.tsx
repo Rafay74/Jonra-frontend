@@ -1,12 +1,20 @@
-import { LabelAtom } from '@/components/atoms'
+import { ButtonAtom } from '@/components/atoms'
 import { FormField } from '@/components/molecules'
-import { useForm } from 'react-hook-form'
+import { UploadField } from '@/components/molecules/upload-field'
+import { useForm, Controller } from 'react-hook-form'
 
-interface ISettingHelp {}
+interface ISettingHelp {
+  name: string,
+  title: string,
+  message: string,
+  attachments: File[]
+}
+
 const SettingHelp = () => {
   const {
     register,
     handleSubmit,
+    control,
     formState: { errors },
   } = useForm<ISettingHelp>()
 
@@ -38,9 +46,46 @@ const SettingHelp = () => {
             label="Title"
             placeholder="Enter your Issue Title"
             register={register}
-            error={errors.name}
+            error={errors.title}
             labelClassName="text-white"
           />
+
+
+          <FormField
+            name="message"
+            label="Type your message here"
+            placeholder="Type your query here"
+            register={register}
+            error={errors.message}
+            labelClassName="text-white"
+            showTextArea
+          />
+
+          <Controller
+            name="attachments"
+            control={control}
+            defaultValue={[]}
+            render={({ field }) => (
+              <UploadField
+                label="Attachments"
+                labelClassName="text-white"
+                value={field.value}
+                onChange={field.onChange}
+              />
+            )}
+          />
+
+
+          <ButtonAtom
+            htmlType="submit"
+            className="h-12 sm:h-full px-6 rounded-xl text-white font-medium shrink-0"
+            style={{
+              background: 'linear-gradient(90deg, #1EC5E0 0%, #9F8EFF 100%)',
+            }}
+          >
+            Submit Now
+          </ButtonAtom>
+
         </form>
       </div>
     </div>

@@ -1,10 +1,12 @@
 import { ButtonAtom } from '@/components/atoms'
 import { Check } from 'lucide-react'
-interface IStatusModal {
-  onClose: () => void
-}
+// interface IStatusModal {
+//   onClose?: () => void
+// }
 
-const StatusModal = ({ onClose }: IStatusModal) => {
+const StatusModal = () => {
+
+
   return (
     <div className="fixed inset-0 bg-black/40 backdrop-blur-sm z-80 flex items-center justify-center p-4">
       <div

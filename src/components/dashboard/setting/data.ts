@@ -14,6 +14,6 @@ export const SETTING_DATA = [
 
   {
     title: 'Help & Support',
-    path: '/settings/account',
+    path: '/settings/help',
   },
 ]
