@@ -8,7 +8,7 @@ import me from '@/assets/me.svg'
 import { ButtonAtom } from '@/components/atoms'
 import { SearchBar } from '@/components/molecules'
 import { Link } from 'react-router-dom'
-import { ProposalModal } from '@/components/molecules/modal'
+import { ProfileModal } from '@/components/molecules/modal'
 import { SIDEBAR_MAIN_MENU_LINKS, SIDEBAR_SETTINGS_LINKS } from './data'
 
 interface IDashboard {
@@ -23,7 +23,7 @@ const DashboardLayout = ({ children }: IDashboard) => {
     setIsProfileModalOpen(true)
   }
 
-  // const closeProfileModal = () => setIsProfileModalOpen(false)
+  const closeProfileModal = () => setIsProfileModalOpen(false)
 
   return (
     <>
@@ -35,7 +35,7 @@ const DashboardLayout = ({ children }: IDashboard) => {
       )}
 
       {isProfileModalOpen && (
-        <ProposalModal />
+        <ProfileModal onClose={closeProfileModal} />
       )}
 
       <main className="min-h-screen bg-[#092835] flex p-2 md:p-4 gap-2 md:gap-4">

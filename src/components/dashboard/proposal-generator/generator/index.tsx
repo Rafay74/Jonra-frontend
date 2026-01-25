@@ -1,8 +1,7 @@
 import { ButtonAtom } from '@/components/atoms'
 import { useForm } from 'react-hook-form'
 import { BillingSection } from './billing-section'
-import { PROPOSAL_SETTINGS } from './data'
-import { SettingToggle } from './proposal-setting'
+
 import { ProposalCard } from './proposal-card'
 
 interface IProposalForm {
@@ -26,7 +25,7 @@ const ProposalGenerator = () => {
       <div className="text-[#1EC5E0] text-xl lg:text-2xl font-bold">Proposal Generator</div>
       <div className="bg-[#C9C9C933] h-screen rounded-2xl p-4 md:p-6 lg:p-8 flex flex-col gap-4 overflow-y-auto">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4">
-          <ProposalCard title="Add a Business Logo" />
+          <ProposalCard title="Add a Business Logo" fileUpload />
           <ProposalCard title="Invoice No:" />
           <ProposalCard title="Select Template" />
           <ProposalCard title="Add Due Date" />
@@ -59,7 +58,7 @@ const ProposalGenerator = () => {
             />
           </div>
         </div>
-        <div className="flex-1 rounded-3xl bg-[#bcb7b733] p-4 md:p-6 space-y-4">
+        {/* <div className="flex-1 rounded-3xl bg-[#bcb7b733] p-4 md:p-6 space-y-4">
           <span className="text-lg md:text-xl font-bold text-[#1EC5E0]">Settings</span>
           <div className="w-full lg:w-1/2">
             <div className="flex flex-col sm:flex-row sm:justify-between gap-4">
@@ -68,7 +67,7 @@ const ProposalGenerator = () => {
               ))}
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
     </div>
   )

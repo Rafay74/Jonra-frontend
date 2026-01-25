@@ -3,7 +3,7 @@ import me from '@/assets/me.svg'
 import { ButtonAtom } from '@/components/atoms'
 
 interface IProfileModal {
-  onClose: () => void
+  onClose?: () => void
 }
 
 const ProfileModal = ({ onClose }: IProfileModal) => {
