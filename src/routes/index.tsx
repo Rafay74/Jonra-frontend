@@ -110,6 +110,7 @@ export const router = createBrowserRouter([
       </DashboardLayout>
     ),
   },
+  
 
   {
     path: '/all-proposals',
