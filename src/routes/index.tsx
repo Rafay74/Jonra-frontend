@@ -77,7 +77,7 @@ export const router = createBrowserRouter([
     ),
   },
   {
-    path: '/rfq-library',
+    path: '/rfq-library/all',
     element: (
       <DashboardLayout>
         <AllRfqsPage />
@@ -103,17 +103,17 @@ export const router = createBrowserRouter([
   },
 
   {
-    path: '/proposal-generator',
+    path: '/proposal-generator/create',
     element: (
       <DashboardLayout>
         <ProposalGeneratorPage />
       </DashboardLayout>
     ),
   },
-  
+
 
   {
-    path: '/all-proposals',
+    path: '/proposal-generator/all',
     element: (
       <DashboardLayout>
         <AllProposalGeneratorsPage />

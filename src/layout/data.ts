@@ -11,6 +11,13 @@ export const SIDEBAR_MAIN_MENU_LINKS = [
     {
         name: "RFQ Library",
         link: "/rfq-library",
+        children: [
+            {
+                name: "All Rfqs",
+                link: "all"
+            },
+            
+        ],
         src: Bag
     },
     {
@@ -21,6 +28,16 @@ export const SIDEBAR_MAIN_MENU_LINKS = [
     {
         name: "Proposal Generator",
         link: "/proposal-generator",
+        children: [
+            {
+                name: "Create Proposal",
+                link: "create"
+            },
+            {
+                name: "All Proposals",
+                link: "all"
+            }
+        ],
         src: Bag
     }
 ]

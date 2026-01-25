@@ -18,12 +18,20 @@ interface IDashboard {
 const DashboardLayout = ({ children }: IDashboard) => {
   const [isProfileModalOpen, setIsProfileModalOpen] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const [openMenu, setOpenMenu] = useState<string | null>(null)
+
+  const toggleMenu = (name: string) => {
+    setOpenMenu(prev => (prev === name ? null : name))
+  }
+
 
   const openProfileModal = () => {
     setIsProfileModalOpen(true)
   }
 
   const closeProfileModal = () => setIsProfileModalOpen(false)
+
+
 
   return (
     <>
@@ -54,21 +62,58 @@ const DashboardLayout = ({ children }: IDashboard) => {
                 <div className="h-px bg-[#1a4d5f]  mb-4"></div>
                 <h2 className="text-white text-xl lg:text-2xl font-extrabold">MAIN MENU</h2>
               </div>
-              {
-                SIDEBAR_MAIN_MENU_LINKS.map((menu) => {
-                  return (
-                    <>
-                      <Link to={menu?.link}>
-                        <div className="flex items-center gap-3 px-4 py-3 hover:bg-[#092835] rounded-2xl cursor-pointer transition-colors">
-                          <img src={Arrow} alt="arrow" />
-                          <img src={menu.src} alt="dashboard_logo" />
-                          <span className="text-white">{menu?.name}</span>
-                        </div>
+
+
+              {SIDEBAR_MAIN_MENU_LINKS.map((menu) => {
+                const hasChildren = !!menu.children
+                const isOpen = openMenu === menu.name
+
+                return (
+                  <div key={menu.name} className="space-y-1">
+
+
+                    {hasChildren ? (
+                      <div
+                        onClick={() => toggleMenu(menu.name)}
+                        className="flex items-center gap-3 px-4 py-3 rounded-2xl
+                     cursor-pointer hover:bg-[#092835] transition-colors"
+                      >
+                        <img src={Arrow} alt="arrow" />
+                        <img src={menu.src} alt="icon" />
+                        <span className="text-white flex-1">{menu.name}</span>
+
+                      </div>
+                    ) : (
+                      <Link
+                        to={menu.link}
+                        className="flex items-center gap-3 px-4 py-3 rounded-2xl
+                     cursor-pointer hover:bg-[#092835] transition-colors"
+                      >
+                        <img src={Arrow} alt="arrow" />
+                        <img src={menu.src} alt="icon" />
+                        <span className="text-white">{menu.name}</span>
                       </Link>
-                    </>
-                  )
-                })
-              }
+                    )}
+
+                    {/* ===== CHILDREN ===== */}
+                    {hasChildren && isOpen && (
+                      <div className="ml-10 flex flex-col gap-1">
+                        {menu.children!.map((child) => (
+                          <Link
+                            key={child.name}
+                            to={`${menu.link}/${child.link}`}
+                            className="px-4 py-2 rounded-xl text-sm text-gray-300
+                         hover:bg-[#092835] hover:text-white transition-colors"
+                          >
+                            {child.name}
+                          </Link>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                )
+              })}
+
             </div>
 
             <div className="mt-8 pt-8">
@@ -143,7 +188,7 @@ const DashboardLayout = ({ children }: IDashboard) => {
 
           <div className="flex-1 bg-[#092835] overflow-auto">{children}</div>
         </div>
-      </main>
+      </main >
     </>
   )
 }
